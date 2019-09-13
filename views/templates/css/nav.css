@@ -1,0 +1,94 @@
+nav#menu{
+    width: 100%;
+    height: auto;
+    border-bottom: 5px solid green;
+}
+
+ul#ulprincipal{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    justify-content: space-between;
+}
+
+a.aprincipal{
+    width: 100%;
+    padding: 1%;
+    text-decoration: none;
+    color: white;
+    background: #00a000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.5s;
+}
+
+a.aprincipal:hover{
+    transition: 0.5s;
+    background: green;
+}
+
+li.liprincipal{
+    text-align: center;
+    word-break: keep-all;
+    word-wrap: unset;
+}
+
+img.imgnav{
+    margin: 0 auto;
+    width: 45px;
+    height: 39px;
+}
+
+div#imgusuario{
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    width:214.5px;
+    height:286px;
+}
+
+.active{
+    background: green !important;
+}
+
+div#mresponsivo{
+    display: none;
+    background: #00a000;
+}
+div#responsivo{
+    display: flex;
+    justify-content: space-between;
+}
+div#txtmenu{
+    font-size: 40px;
+    color: white;
+}
+div#imgmenu:hover{
+    background: green;
+}
+
+@media only screen and (max-width: 780px){
+    img.imgnav{
+        display: none;
+    }
+    ul#ulprincipal{
+        flex-direction: column;
+        text-align: left;
+        display: none;
+    }
+    a.aprincipal{
+        background: #333;
+        font-size: 20px;
+    }
+    li.liprincipal{
+        text-align: left;
+    }
+    div#mresponsivo{
+        display: block;
+    }
+}
