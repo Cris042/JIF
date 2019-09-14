@@ -37,8 +37,11 @@ tr:hover{
     
 }
   
+.wraper-table tr:nth-of-type(2n){
+    background: rgb(74, 196, 74);
+}
   
-th{
+.wraper-table tr{
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
@@ -46,6 +49,8 @@ th{
     color: white;
     font-weight: 100;
 }
+
+
 
 .escuro{
     background-color: darkgrey;

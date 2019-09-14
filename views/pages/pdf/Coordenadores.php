@@ -1,9 +1,8 @@
 <?php 
     include('../../MySql.php'); 
-    include('../../models\bd.php'); 
-    use models\bd;
-    $coordenadores = bd::selectAll('coordenadores_modalidades');
-
+    $coordenadores = \MySql::conectar()->prepare("SELECT * FROM `coordenadores_modalidades`");
+    $coordenadores->execute(array());
+	$coordenadores = $coordenadores->fetchAll();
 ?>
 <style>
 

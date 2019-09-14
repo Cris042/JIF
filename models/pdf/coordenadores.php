@@ -1,5 +1,5 @@
 <?php
-    include('../../Lib/vendor/autoload.php');
+    include('../../lib/vendor/autoload.php');
    
 	ob_start();
 		include('../../views/pages/pdf/coordenadores.php');

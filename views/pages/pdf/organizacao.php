@@ -1,9 +1,8 @@
 <?php 
     include('../../MySql.php'); 
-    include('../../models\bd.php'); 
-    use models\bd;
-    $organizacao = bd::selectAll('organizacao');
-
+    $organizacao = \MySql::conectar()->prepare("SELECT * FROM `organizacao`");
+    $organizacao->execute(array());
+	$organizacao = $organizacao->fetchAll();
 ?>
 <style>
 

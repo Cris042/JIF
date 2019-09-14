@@ -1,8 +1,8 @@
 <?php 
     include('../../MySql.php'); 
-    include('../../models\bd.php'); 
-    use models\bd;
-    $telefones = bd::selectAll('turismo');
+    $turismo = \MySql::conectar()->prepare("SELECT * FROM `turismo`");
+    $turismo->execute(array());
+	$turismo = $turismo->fetchAll();
 
 ?>
 <style>
@@ -62,7 +62,7 @@
                    <th class="coluna-principla">Nome</th>
                 </tr>
 
-                <?php foreach($telefones as $key => $value) {?>
+                <?php foreach($turismo as $key => $value) {?>
                     <tr>
                          <th><?php echo $value['data']; ?></th>
                          <th><?php echo $value['hora']; ?></th>

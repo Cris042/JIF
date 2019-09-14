@@ -1,9 +1,8 @@
 <?php 
     include('../../MySql.php'); 
-    include('../../models\bd.php'); 
-    use models\bd;
-    $transporte = bd::selectAll('transporte');
-
+    $transporte = \MySql::conectar()->prepare("SELECT * FROM `transporte`");
+    $transporte->execute(array());
+	$transporte = $transporte->fetchAll();
 ?>
 <style>
 

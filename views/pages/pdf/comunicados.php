@@ -1,9 +1,8 @@
 <?php 
     include('../../MySql.php'); 
-    include('../../models\bd.php'); 
-    use models\bd;
-    $comunicados = bd::selectAll('comunicado');
-
+    $comunicados = \MySql::conectar()->prepare("SELECT * FROM `comunicado`");
+    $comunicados->execute(array());
+	$comunicados = $comunicados->fetchAll();
 ?>
 <style>
 
@@ -30,7 +29,7 @@
     }
     
     
-    th{
+    .wraper-table tr{
         padding-top: 12px;
         padding-bottom: 12px;
         text-align: justify;
