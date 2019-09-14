@@ -13,11 +13,11 @@
         <h1>Cadastra Membros  Da Organizaçao</h1>
 
         <?php 
-            if($_SESSION['mensagen'] == true);
+            if(@$_SESSION['mensagen'] == true);
             {
                echo @$_SESSION['msn'];
                unset($_SESSION['msn']);
-               $_SESSION['mensagen'] = false;
+               @$_SESSION['mensagen'] = false;
             }          
         ?>
 

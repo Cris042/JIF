@@ -2,7 +2,7 @@
     include('../../MySql.php'); 
     include('../../models\bd.php'); 
     use models\bd;
-    $comunicados = bd::selectAll('comunicado');
+    $coordenadores = bd::selectAll('coordenadores_modalidades');
 
 ?>
 <style>
@@ -48,22 +48,24 @@
         text-align: center;
     }
 
-
 </style>
+
 <div id="container"> 
-    <h2 class="titulo">Comunicados<h2>
+    <h2 class="titulo">Coordenadores de Modalidades<h2>
     <div class="wraper-table">            
             <table>    
             
                 <tr>  
-                   <th class="coluna-principla">titulo</th>
-                   <th class="coluna-principla">Mensagen</th>
+                   <th class="coluna-principla">E-mail</th>
+                   <th class="coluna-principla">Cargo</th>
+                   <th class="coluna-principla">Nome</th>
                 </tr>
 
-                <?php foreach($comunicados as $key => $value) {?>
+                <?php foreach($coordenadores as $key => $value) {?>
                     <tr>
-                         <th><?php echo $value['titulo']; ?></th>
-                         <th><?php echo $value['mensagen']; ?></th>
+                         <th><?php echo $value['email']; ?></th>
+                         <th><?php echo $value['cargo']; ?></th>
+                         <th><?php echo $value['nome']; ?></th>
                     </tr>              
                 <?php }?>
 

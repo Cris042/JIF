@@ -2,7 +2,7 @@
     include('../../MySql.php'); 
     include('../../models\bd.php'); 
     use models\bd;
-    $comunicados = bd::selectAll('comunicado');
+    $hospitais = bd::selectAll('hospitais');
 
 ?>
 <style>
@@ -51,19 +51,23 @@
 
 </style>
 <div id="container"> 
-    <h2 class="titulo">Comunicados<h2>
+    <h2 class="titulo">Hospitais<h2>
     <div class="wraper-table">            
             <table>    
             
                 <tr>  
-                   <th class="coluna-principla">titulo</th>
-                   <th class="coluna-principla">Mensagen</th>
+                   <th class="coluna-principla">Plano</th>
+                   <th class="coluna-principla">Instituiçao</th>
+                   <th class="coluna-principla">Telefone</th>
+                   <th class="coluna-principla">endereço</th>
                 </tr>
 
-                <?php foreach($comunicados as $key => $value) {?>
+                <?php foreach($hospitais as $key => $value) {?>
                     <tr>
-                         <th><?php echo $value['titulo']; ?></th>
-                         <th><?php echo $value['mensagen']; ?></th>
+                         <th><?php echo $value['plano']; ?></th>
+                         <th><?php echo $value['instituicao']; ?></th>
+                         <th><?php echo $value['telefone']; ?></th>
+                         <th><?php echo $value['endereco']; ?></th>
                     </tr>              
                 <?php }?>
 

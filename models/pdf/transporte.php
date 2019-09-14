@@ -2,11 +2,11 @@
     include('../../Lib/vendor/autoload.php');
    
 	ob_start();
-		include('../../views/pages/pdf/comunicados.php');
+		include('../../views/pages/pdf/transporte.php');
 		$conteudo = ob_get_contents();
 	ob_end_clean();
 
 	$mpdf = new \Mpdf\Mpdf();
 	$mpdf->WriteHTML($conteudo);
-    $mpdf->Output('comunicados.pdf','D');
+    $mpdf->Output('trasportes.pdf','D');
 ?>
