@@ -20,15 +20,10 @@
 				include($Arquivo);
 			}
 			 
-			$token = md5($_SERVER['REMOTE_ADDR'].$_SERVER['HTTP_USER_AGENT']);
-
-			if($token != @$_SESSION['user'] )
-			     die("acesso negado!");
-			else
-			{
-				$controller = new $class();
-				$controller->index();
-			}
+			
+			$controller = new $class();
+			$controller->index();
+		
 		}
 
 	}

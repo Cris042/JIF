@@ -1,22 +1,16 @@
 <?php 
      $query = "";
-     if(isset($_POST['pesquisa']))
-	 {
-			$busca = $_POST['busca'];
-            $query = " WHERE cargo LIKE '%$busca%' or nome LIKE '%$busca%' or 
-            email LIKE '%$busca%' or responsavel  LIKE '%$busca%' or telefone LIKE '%$busca%' ";
-     }
      $equipe = \models\bd::pesquisa('organizacao',$query);
 ?>
 <div id="container">      
    
     <section class="pesquisa-card">
-
-        <form method="post">
-                <input placeholder="Procure por: cargo,email,nome,telefone,responsavel" type="text" name="busca">
-                <input type="submit" name="pesquisa" value="Buscar!">
+        <form method="post" class="ajax" action="models/pesquisa_ajax.php">
+                <input placeholder="Procure por: Nome,Cargo,Responsavel,Telefone e E-mail" class="input-busca" type="text" name="pesquisa-equipe-user" />
+                <div  class="icone-search">
+                  <button disabled name="pesquisa" class="icone-search"><i class="fas fa-search"></i></button>
+                </div>
         </form>
-
     </section><!--pesquisa-card-->
 
     <section class="listagen">

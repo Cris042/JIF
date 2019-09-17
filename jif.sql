@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Set-2019 às 05:31
+-- Tempo de geração: 15-Set-2019 às 18:41
 -- Versão do servidor: 10.3.16-MariaDB
 -- versão do PHP: 7.3.7
 
@@ -91,7 +91,7 @@ INSERT INTO `chamada` (`chamada_id`, `nome`, `status`, `data_inicio`, `hora_inic
 
 CREATE TABLE `comunicado` (
   `id` int(11) NOT NULL,
-  `mensagen` varchar(255) NOT NULL,
+  `mensagen` text NOT NULL,
   `titulo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -101,9 +101,11 @@ CREATE TABLE `comunicado` (
 
 INSERT INTO `comunicado` (`id`, `mensagen`, `titulo`) VALUES
 (22, '  Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li      ', 'ola mundo'),
-(25, 'ola mundo              ddcsdc                      \r\n                 em Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impres                                                   \r\n                                                  ', 'ola mundo 8'),
-(26, '  da galera do tipo e a mexeu para fazer um li                                          \r\n                                ', 'ola mundo 2'),
-(27, '  Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li      ', 'ola mundo 4');
+(25, 'Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li        ', 'ola mundo 8'),
+(28, ' Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li       ', 'ola mundo 0'),
+(29, ' Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li       ', 'ola mundo 4'),
+(30, ' Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li       ', 'TESTE'),
+(31, ' Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    ', 'TEXTE');
 
 -- --------------------------------------------------------
 
@@ -1936,7 +1938,7 @@ ALTER TABLE `chamada`
 -- AUTO_INCREMENT de tabela `comunicado`
 --
 ALTER TABLE `comunicado`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de tabela `coordenadores_modalidades`

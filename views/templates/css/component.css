@@ -359,24 +359,20 @@ input.gn-search:focus {
 		float: left;
 		width: 31%;
 		margin: 1%;
-	
-	
-	
 }
 
 .user{
-		height: 200px;
+		max-height: 200px;
+		min-height: 200px;
 		overflow-y: auto;
-}
-
-
-
-.card-txt{
-	    margin-left: 10px;
 }
 
 .btn-link {
 		margin: 10px 40px 0px 40px;
+}
+
+.card-txt {
+        margin-left: 10px;
 }
 
 /* listagen */
@@ -385,14 +381,27 @@ input.gn-search:focus {
    
 .pesquisa-card{
 	max-width: 80%;
-	width: 500px;
+	width: 700px;
 	position: relative;
 	left: 50%;
 	z-index: 0;
 	margin-top: 100px;
-	background:transparent;
-	transform:translate(-50%,0%);
-	-ms-transform:translate(-50%,0%);	
+	background: transparent;
+	transform:translate(-50%,50%);
+	-ms-transform:translate(-50%,50%);	
+}
+
+.icone-search{
+	position: absolute;
+	margin-top: -35px;
+	margin-left: 90%;
+	background: transparent;
+	border: none;
+	font-size: 30px;
+}
+
+.icone-search:hover{
+	color: darkblue;
 }
 
 
@@ -454,6 +463,7 @@ input.gn-search:focus {
 		    margin-top: 30%;
 	}
 
+
 }
 
 @media screen and (max-width: 468px) { 
@@ -467,7 +477,17 @@ input.gn-search:focus {
 			 width: 100%;
 			 margin-top: 20px;
 	
-    } 	
+	} 
+
+	.icone-search{
+			margin-left: 85%;
+			font-size: 25px;
+			margin-top: -33px;
+	}	
+
+	.pesquisa-card{
+           margin-bottom: 70px;
+	}
 
 	
 }

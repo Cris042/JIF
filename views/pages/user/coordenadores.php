@@ -9,15 +9,15 @@
 ?>
 <div id="container">      
    
-    <section class="pesquisa-card">
-
-        <form method="post">
-                <input placeholder="Procure por: cargo,email,nome" type="text" name="busca">
-                <input type="submit" name="pesquisa" value="Buscar!">
+   <section class="pesquisa-card">
+        <form method="post"  class="ajax" action="models/pesquisa_ajax.php">
+                <input placeholder="Procure por: Nome,E-mail e Cargo" class="input-busca" type="text" name="pesquisa-coordenadores-user" />
+                <div  class="icone-search">
+                  <button disabled name="pesquisa" class="icone-search"><i class="fas fa-search"></i></button>
+                </div>
         </form>
-
     </section><!--pesquisa-card-->
-
+    
     <section class="listagen">
          <?php 
             foreach($coordenadores as $key => $value) {?>

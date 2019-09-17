@@ -1,21 +1,16 @@
 <?php 
      $query = "";
-     if(isset($_POST['pesquisa']))
-	 {
-			$busca = $_POST['busca'];
-            $query = " WHERE numero LIKE '%$busca%' or instituicao LIKE '%$busca%'";
-     }
      $telefone = \models\bd::pesquisa('telefones',$query);
 ?>
 <div id="container">      
     
-    <section class="pesquisa-card">
-
-        <form method="post">
-                <input placeholder="Procure por: instituiçao ou telefone," type="text" name="busca">
-                <input type="submit" name="pesquisa" value="Buscar!">
+    <section class="pesquisa-card" >
+        <form method="post" class="ajax" action="models/pesquisa_ajax.php">
+                <input placeholder="Procure por: Telefone ou Instituiçao" class="input-busca" type="text" name="pesquisa-telefones-user"  />
+                <div  class="icone-search">
+                  <button disabled name="pesquisa" class="icone-search"><i class="fas fa-search"></i></button>
+                </div>
         </form>
-
     </section><!--pesquisa-card-->
     
     <section class="listagen">
@@ -30,7 +25,6 @@
                             <li class="list-group-item ">
                                 <P><b>Telefone :</b><span class="card-txt"><?php echo $value['numero']?></span></P>                             
                             </li>
-
                         </ul>
                     </div><!--card-->		
          <?php }?>

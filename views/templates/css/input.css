@@ -51,8 +51,8 @@ textarea{
 }  
 
 .textarea-card{
-    max-width: 100%;
-    min-width: 100%;
+    max-height: 140px;
+    min-height: 140px;
     background: transparent;
     border: transparent;
     margin: 0;
@@ -63,7 +63,9 @@ textarea{
 }  
 
 .pesquisa-card input[type=text]{
-	border-radius: 0 20px 20px 0;
+    border-radius: 10px;
+    height: 70px;
+    padding-left: 10px;
 }
 
 

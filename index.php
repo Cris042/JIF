@@ -1,9 +1,8 @@
 <?php
 	session_start();
-	$_SESSION['user'] = $token = md5($_SERVER['REMOTE_ADDR'].$_SERVER['HTTP_USER_AGENT']);
 	define('INCLUDE_PATH','/GestaoDeDocumentos/');
 	date_default_timezone_set('America/Sao_Paulo');
-	$_SESSION['sectaria'] =  true;
+	$_SESSION['sectaria'] =  false;
 	
 	include('Application.php');
 	include('MySql.php');

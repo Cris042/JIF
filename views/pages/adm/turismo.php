@@ -1,11 +1,5 @@
 <?php 
      $query = "";
-     if(isset($_POST['pesquisa']))
-	 {
-			$busca = $_POST['busca'];
-            $query = " WHERE data LIKE '%$busca%' or hora  LIKE '%$busca%'
-            or nome LIKE '%$busca%' or local LIKE '%$busca%'";
-     }
      $turismo = \models\bd::pesquisa('turismo',$query);
 ?>
 <div id="container">      
@@ -40,12 +34,12 @@
     </section><!-- formulario -->
 
     <section class="pesquisa-card">
-
-        <form method="post">
-                <input placeholder="Procure por: data,horario,local e nome" type="text" name="busca">
-                <input type="submit" name="pesquisa" value="Buscar!">
+        <form method="post" class="ajax" action="models/pesquisa_ajax.php">
+                <input placeholder="Procure por: Data,Horario,Local e Nome" class="input-busca" type="text" name="pesquisa-turismo" />
+                <div  class="icone-search">
+                  <button disabled name="pesquisa" class="icone-search"><i class="fas fa-search"></i></button>
+                </div>
         </form>
-        
     </section><!--pesquisa-card-->
 
     <section class="listagen">

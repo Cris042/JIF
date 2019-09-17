@@ -37,7 +37,7 @@
              <label for="telefone">Telefone</label>
              <input type="text" name ="telefone" class="telefone" required/>
 
-             <label for="endereco">Email</label>
+             <label for="email">Email</label>
              <input type="text" name ="email" required pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/> 
 
              <input type="submit" name="cadastra" value="enviar" />
@@ -46,12 +46,12 @@
     </section><!-- formulario -->
 
     <section class="pesquisa-card">
-
-        <form method="post">
-                <input placeholder="Procure por: cargo,email,nome,telefone,responsavel" type="text" name="busca">
-                <input type="submit" name="pesquisa" value="Buscar!">
+        <form method="post"  class="ajax" action="models/pesquisa_ajax.php">
+                <input placeholder="Procure por: Nome,Cargo,Responsavel,Telefone e E-mail" class="input-busca" type="text" name="pesquisa-equipe" />
+                <div  class="icone-search">
+                  <button disabled name="pesquisa" class="icone-search"><i class="fas fa-search"></i></button>
+                </div>
         </form>
-
     </section><!--pesquisa-card-->
 
     <section class="listagen">
