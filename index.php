@@ -2,7 +2,7 @@
 	session_start();
 	define('INCLUDE_PATH','/GestaoDeDocumentos/');
 	date_default_timezone_set('America/Sao_Paulo');
-	$_SESSION['sectaria'] =  false;
+	$_SESSION['sectaria'] =  TRUE;
 	
 	include('Application.php');
 	include('MySql.php');

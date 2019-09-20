@@ -99,7 +99,7 @@
         
           $busca = strip_tags($_POST['pesquisa-equipe']);
           $query = " WHERE cargo LIKE '%$busca%' or nome LIKE '%$busca%' or 
-          email LIKE '%$busca%' or responsavel  LIKE '%$busca%' or telefone LIKE '%$busca%' ";
+          email LIKE '%$busca%'  or telefone LIKE '%$busca%' ";
           $sql = \MySql::conectar()->prepare("SELECT * FROM organizacao $query ");	
           $sql->execute();
           $sql = $sql->fetchAll();
@@ -121,11 +121,6 @@
                                     <option name="'.$value['cargo'].'">'.$value['cargo'].'</option>
                                     <option name="gernete">gernete</option>                                              
                                 </select>
-                            </li>
-
-                            <li class="list-group-item ">
-                                <b>Responsavel</b>  
-                                <input type="text" name ="responsavel'.$value['id'].'" value="'.$value['responsavel'].'" />
                             </li>
 
                             <li class="list-group-item ">
@@ -431,10 +426,7 @@
                                 <li class="list-group-item ">
                                     <P><b>Telefone :</b><span class="card-txt">'.$value['telefone'].'</span></P>                             
                                 </li>
-
-                                <li class="list-group-item ">
-                                    <P><b>Responsavel :</b><span class="card-txt">'.$value['responsavel'].'</span></P>                             
-                                </li>                        
+                    
                             </ul>           
                          </div><!--card-->
                      </form>				

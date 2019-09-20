@@ -44,14 +44,13 @@
         {
              $nome = strip_tags($_POST['nome']);
              $cargo = strip_tags($_POST['cargo']);
-             $responsavel = strip_tags($_POST['responsavel']);
              $email = strip_tags($_POST['email']);
              $telefone = strip_tags($_POST['telefone']);
              $verifica_email = \models\bd::verifica('organizacao','email = ?',array($email));
             
              if($verifica_email == true)
              {
-               \models\bd::inserir('organizacao','?,?,?,?,?',array($cargo,$responsavel,$telefone,$email,$nome));
+               \models\bd::inserir('organizacao','?,?,?,?',array($cargo,$telefone,$email,$nome));
                \models\bd::msn('Cadastro efeituado com sucesso','1');
              }
              else

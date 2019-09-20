@@ -84,7 +84,6 @@
         {
             $id = $_POST['id'];
             $cargo = strip_tags($_POST['cargo'.$id]);
-            $responsavel = strip_tags($_POST['responsavel'.$id]);
             $telefoneatual = strip_tags($_POST['telefoneatual'.$id]);
             $telefone = strip_tags($_POST['telefone'.$id]);
             $emailatual = strip_tags($_POST['emailatual'.$id]);
@@ -102,8 +101,8 @@
 
             if($verifica == true)
             {
-                \models\bd::editar('organizacao','cargo = ?,responsavel = ?,telefone = ?,email = ?',
-                 array($cargo,$responsavel,$telefone,$email),$id);
+                \models\bd::editar('organizacao','cargo = ?,telefone = ?,email = ?',
+                 array($cargo,$telefone,$email),$id);
                 \models\bd::msn('Atualizalçao realizada com sucesso','1');
             }
             else

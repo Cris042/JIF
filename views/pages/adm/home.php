@@ -34,7 +34,7 @@
            
             <tr>  
                 <th class="text-center"> 
-                       <P>Comunicados</p>
+                       <P>Boletim</p>
                 </th> 
 
                 <th class="text-center"> 
@@ -43,118 +43,12 @@
                 
                 <th class="text-center"> 
                         <button type="button" id="btn_comunicado" class="btn btn-success">
-                                <a href="models/pdf/comunicados.php">Baixar</a>
+                                <a href="models/pdf/boletim.php">Baixar</a>
                         </button> 
                 </th> 
 
             </tr>
 
-            <tr>  
-                <th class="text-center"> 
-                       <P>Hospitais</p>
-                </th> 
-
-                <th class="text-center"> 
-                        <P>descriçao</p>
-                </th> 
-                
-                <th class="text-center"> 
-                        <button type="button" id="btn_hospitais" class="btn btn-success">
-                                <a href="models/pdf/hospitais.php">Baixar</a>
-                        </button> 
-                </th> 
-
-            </tr>
-
-
-            <tr>  
-                <th class="text-center"> 
-                       <P>Telefones</p>
-                </th> 
-
-                <th class="text-center"> 
-                        <P>descriçao</p>
-                </th> 
-                
-                <th class="text-center"> 
-                        <button type="button" id="btn_telefone" class="btn btn-success">
-                                <a href="models/pdf/telefones.php">Baixar</a>
-                        </button> 
-                </th> 
-
-            </tr>
-
-            <tr>  
-                <th class="text-center"> 
-                       <P>Atraçoes turristicas</p>
-                </th> 
-
-                <th class="text-center"> 
-                        <P>descriçao</p>
-                </th> 
-                
-                <th class="text-center"> 
-                        <button type="button" id="btn_turrismo" class="btn btn-success">
-                                <a href="models/pdf/turismo.php">Baixar</a>
-                        </button> 
-                </th> 
-
-            </tr>
-
-            <tr>  
-                <th class="text-center"> 
-                       <P>Coordenadores</p>
-                </th> 
-
-                <th class="text-center"> 
-                        <P>descriçao</p>
-                </th> 
-                
-                <th class="text-center"> 
-                        <button type="button" id="btn_coordenadores" class="btn btn-success">
-                                <a href="models/pdf/coordenadores.php">Baixar</a>
-                        </button> 
-                </th> 
-
-            </tr>
-
-
-            <tr>  
-                <th class="text-center"> 
-                       <P>Organizçao</p>
-                </th> 
-
-                <th class="text-center"> 
-                        <P>descriçao</p>
-                </th> 
-                
-                <th class="text-center"> 
-                        <button type="button" id="btn_organizacao" class="btn btn-success">
-                                <a href="models/pdf/organizacao.php">Baixar</a>
-                        </button> 
-                </th> 
-
-            </tr>
-
-            <tr>  
-                <th class="text-center"> 
-                       <P>Transpotes</p>
-                </th> 
-
-                <th class="text-center"> 
-                        <P>descriçao</p>
-                </th> 
-                
-                <th class="text-center"> 
-                        <button type="button" id="btn_transporte" class="btn btn-success">
-                                 <a href="models/pdf/transporte.php">Baixar</a>
-                        </button> 
-                </th> 
-
-            </tr>
-
-
-            
         </table>  
     <div><!--wrapper-table-->
 

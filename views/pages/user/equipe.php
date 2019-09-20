@@ -35,9 +35,6 @@
                                 <P><b>Telefone :</b><span class="card-txt"><?php echo $value['telefone']?></span></P>                             
                             </li>
 
-                            <li class="list-group-item ">
-                                <P><b>Responsavel :</b><span class="card-txt"><?php echo $value['responsavel']?></span></P>                             
-                            </li>
                             
                         </ul>
                     </div><!--card-->	

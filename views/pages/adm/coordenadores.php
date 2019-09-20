@@ -18,8 +18,16 @@
         <form method="post">
              <label for="cargo">Cargo</label>
              <select name ="cargo" required>
-                 <option name="gernete futibol">gernete futibol</option>
-                 <option name="gernete volei">gernete volei</option>
+                   <option name="Coordenador Técnico Atletismo">Coordenador Técnico Atletismo</option>
+                   <option name="Coordenador Técnico Basquete">Coordenador Técnico Basquete </option>    
+                   <option name="Coordenador Técnico Futsal">Coordenador Técnico Futsal </option>
+                   <option name="Coordenador Técnico Handebol">Coordenador Técnico Handebol </option>    
+                   <option name="Coordenador Técnico Judô">Coordenador Técnico Judô </option>
+                   <option name="Coordenador Técnico Natação">Coordenador Técnico Natação </option>       
+                   <option name="Coordenador Técnico">Coordenador Técnico </option>
+                   <option name="Coordenador Técnico Voleibol">Coordenador Técnico Voleibol  </option>    
+                   <option name="Coordenador Técnico Vôlei de Praia">Coordenador Técnico Vôlei de Praia  </option>
+                    <option name="Coordenador Técnico Xadrez">Coordenador Técnico Xadrez </option>                    
              </select>
 
              <label for="nome">Nome</label>
@@ -51,8 +59,16 @@
                             <li class="list-group-item "><b>Cargo:</b>                              
                                 <select name ="cargo<?php echo $value['id'] ?>">
                                     <option name="<?php echo $value['cargo'] ?>"><?php echo $value['cargo'] ?></option>
-                                    <option name="gernete futibol">gernete futibol</option>
-                                    <option name="gernete volei">gernete volei</option>                                               
+                                    <option name="Coordenador Técnico Atletismo">Coordenador Técnico Atletismo</option>
+                                    <option name="Coordenador Técnico Basquete">Coordenador Técnico Basquete </option>    
+                                    <option name="Coordenador Técnico Futsal">Coordenador Técnico Futsal </option>
+                                    <option name="Coordenador Técnico Handebol">Coordenador Técnico Handebol </option>    
+                                    <option name="Coordenador Técnico Judô">Coordenador Técnico Judô </option>
+                                    <option name="Coordenador Técnico Natação">Coordenador Técnico Natação </option>       
+                                    <option name="Coordenador Técnico">Coordenador Técnico </option>
+                                    <option name="Coordenador Técnico Voleibol">Coordenador Técnico Voleibol  </option>    
+                                    <option name="Coordenador Técnico Vôlei de Praia">Coordenador Técnico Vôlei de Praia  </option>
+                                    <option name="Coordenador Técnico Xadrez">Coordenador Técnico Xadrez </option>                                               
                                 </select>
                             </li>
                             

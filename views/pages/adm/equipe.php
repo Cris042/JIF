@@ -27,12 +27,34 @@
 
              <label for="cargo">Cargo</label>
              <select name ="cargo" required>
-                 <option name="gernete">gernete</option>
-                 <option name="gernete">gernete</option>
+                    <option name="PRESIDENTE DA COMISSÃO ORGANIZADORA">PRESIDENTE DA COMISSÃO ORGANIZADORA </option>  
+                    <option name="PRESIDENTE DA COMISSÃO DOS JIFs">PRESIDENTE DA COMISSÃO DOS JIFs  </option>        
+                    <option name="COORDENAÇÃO GERAL">COORDENAÇÃO GERAL  </option>        
+                    <option name="AUXILIAR DA COORDENAÇÃO LOCAL">AUXILIAR DA COORDENAÇÃO LOCAL  </option>        
+                    <option name="COORDENAÇÃO TÉCNICA DESPORTIVA">COORDENAÇÃO TÉCNICA DESPORTIVA  </option>    
+                    <option name="AUXILÍAR DA COORDENAÇÃO TÉCNICA">AUXILÍAR DA COORDENAÇÃO TÉCNICA  </option>  
+                    <option name="COORDENAÇÃO DE ARBITRAGEM">COORDENAÇÃO DE ARBITRAGEM   </option>        
+                    <option name="SECRETARIA">SECRETARIA   </option>        
+                    <option name="PRESIDENTE DA COMISSÃO DISCIPLINAR">PRESIDENTE DA COMISSÃO DISCIPLINAR   </option>        
+                    <option name="COORDENADORA ADMINISTRATIVA ">COORDENADORA ADMINISTRATIVA   </option>   
+                    <option name="COORDENADOR DE CERIMONIAIS">COORDENADOR DE CERIMONIAIS  </option>  
+                    <option name="COORDENADOR DE RECREAÇÃO E DE CULTURA ">COORDENADOR DE RECREAÇÃO E DE CULTURA   </option>        
+                    <option name="COORDENADORA DE ALOJAMENTO">COORDENADORA DE ALOJAMENTO   </option>        
+                    <option name="COORDENADORA DE HOSDEDAGEM">COORDENADORA DE HOSDEDAGEM   </option>        
+                    <option name="COORDENADORA DE ALIMENTACÃO ">COORDENADORA DE ALIMENTACÃO   </option>    
+                    <option name="COORDENADORA DE SERVICOS GERAIS">COORDENADORA DE SERVICOS GERAIS   </option>  
+                    <option name="COORDENADOR DE TRANSPORTE">COORDENADOR DE TRANSPORTE   </option>        
+                    <option name="COORDENADOR DE MANUTENÇÃO">COORDENADOR DE MANUTENÇÃO    </option>        
+                    <option name="COORDENADOR DE TECNOLOGIA DA INFORMAÇÃO ">COORDENADOR DE TECNOLOGIA DA INFORMAÇÃO    </option>        
+                    <option name="COORDENADORA DE ASSISTÊNCIA ESTUDANTIL">COORDENADORA DE ASSISTÊNCIA ESTUDANTIL    </option>                                  
+                    <option name="COORDENADOR EXECUTIVO DO CFO ">COORDENADOR EXECUTIVO DO CFO    </option>        
+                    <option name="OORDENADOR DE RECEPÇÃO E INFORMAÇÕES">COORDENADOR DE RECEPÇÃO E INFORMAÇÕES   </option> 
+                    <option name="COORDENADOR DE MULTIMEIOS ">COORDENADOR DE MULTIMEIOS     </option>        
+                    <option name="COORDENADORA DE COMUNICAÇÃO SOCIAL">COORDENADORA DE COMUNICAÇÃO SOCIAL     </option>        
+                    <option name="COORDENADORA DE ASSISTÊNCIA ESTUDANTIL">COORDENADORA DE ASSISTÊNCIA ESTUDANTIL    </option>                                  
+                    <option name="COORDENADORA DE SAÚDE">COORDENADORA DE SAÚDE     </option>        
+                    <option name="COORDENADOR DE TURISMO">COORDENADOR DE TURISMO   </option>       
              </select>
-
-             <label for="responsavel">Responsavel</label>
-             <input type="text" name ="responsavel" required />
 
              <label for="telefone">Telefone</label>
              <input type="text" name ="telefone" class="telefone" required/>
@@ -68,13 +90,34 @@
                             <li class="list-group-item "><b>Cargo:</b>                             
                                 <select name ="cargo<?php echo $value['id'] ?>">
                                     <option name="<?php echo $value['cargo'] ?>"><?php echo $value['cargo'] ?></option>
-                                    <option name="gernete">gernete</option>                                              
+                                    <option name="PRESIDENTE DA COMISSÃO ORGANIZADORA">PRESIDENTE DA COMISSÃO ORGANIZADORA </option>  
+                                    <option name="PRESIDENTE DA COMISSÃO DOS JIFs">PRESIDENTE DA COMISSÃO DOS JIFs  </option>        
+                                    <option name="COORDENAÇÃO GERAL">COORDENAÇÃO GERAL  </option>        
+                                    <option name="AUXILIAR DA COORDENAÇÃO LOCAL">AUXILIAR DA COORDENAÇÃO LOCAL  </option>        
+                                    <option name="COORDENAÇÃO TÉCNICA DESPORTIVA">COORDENAÇÃO TÉCNICA DESPORTIVA  </option>    
+                                    <option name="AUXILÍAR DA COORDENAÇÃO TÉCNICA">AUXILÍAR DA COORDENAÇÃO TÉCNICA  </option>  
+                                    <option name="COORDENAÇÃO DE ARBITRAGEM">COORDENAÇÃO DE ARBITRAGEM   </option>        
+                                    <option name="SECRETARIA">SECRETARIA   </option>        
+                                    <option name="PRESIDENTE DA COMISSÃO DISCIPLINAR">PRESIDENTE DA COMISSÃO DISCIPLINAR   </option>        
+                                    <option name="COORDENADORA ADMINISTRATIVA ">COORDENADORA ADMINISTRATIVA   </option>   
+                                    <option name="COORDENADOR DE CERIMONIAIS">COORDENADOR DE CERIMONIAIS  </option>  
+                                    <option name="COORDENADOR DE RECREAÇÃO E DE CULTURA ">COORDENADOR DE RECREAÇÃO E DE CULTURA   </option>        
+                                    <option name="COORDENADORA DE ALOJAMENTO">COORDENADORA DE ALOJAMENTO   </option>        
+                                    <option name="COORDENADORA DE HOSDEDAGEM">COORDENADORA DE HOSDEDAGEM   </option>        
+                                    <option name="COORDENADORA DE ALIMENTACÃO ">COORDENADORA DE ALIMENTACÃO   </option>    
+                                    <option name="COORDENADORA DE SERVICOS GERAIS">COORDENADORA DE SERVICOS GERAIS   </option>  
+                                    <option name="COORDENADOR DE TRANSPORTE">COORDENADOR DE TRANSPORTE   </option>        
+                                    <option name="COORDENADOR DE MANUTENÇÃO">COORDENADOR DE MANUTENÇÃO    </option>        
+                                    <option name="COORDENADOR DE TECNOLOGIA DA INFORMAÇÃO ">COORDENADOR DE TECNOLOGIA DA INFORMAÇÃO    </option>        
+                                    <option name="COORDENADORA DE ASSISTÊNCIA ESTUDANTIL">COORDENADORA DE ASSISTÊNCIA ESTUDANTIL    </option>                                  
+                                    <option name="COORDENADOR EXECUTIVO DO CFO ">COORDENADOR EXECUTIVO DO CFO    </option>        
+                                    <option name="OORDENADOR DE RECEPÇÃO E INFORMAÇÕES">COORDENADOR DE RECEPÇÃO E INFORMAÇÕES   </option> 
+                                    <option name="COORDENADOR DE MULTIMEIOS ">COORDENADOR DE MULTIMEIOS     </option>        
+                                    <option name="COORDENADORA DE COMUNICAÇÃO SOCIAL">COORDENADORA DE COMUNICAÇÃO SOCIAL     </option>        
+                                    <option name="COORDENADORA DE ASSISTÊNCIA ESTUDANTIL">COORDENADORA DE ASSISTÊNCIA ESTUDANTIL    </option>                                  
+                                    <option name="COORDENADORA DE SAÚDE">COORDENADORA DE SAÚDE     </option>        
+                                    <option name="COORDENADOR DE TURISMO">COORDENADOR DE TURISMO   </option>        
                                 </select>
-                            </li>
-
-                            <li class="list-group-item ">
-                                <b>Responsavel</b>  
-                                <input type="text" name ="responsavel<?php echo $value['id'] ?>" value="<?php echo $value['responsavel'] ?>" />
                             </li>
 
                             <li class="list-group-item ">
