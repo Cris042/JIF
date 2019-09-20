@@ -178,6 +178,34 @@
             \models\bd::msn('Atualizalçao realizada com sucesso','1');
             
         }
+        public static function editar_boletim()
+        {
+            $id = $_POST['id'];
+            @$imagem = $_FILES['imagem'];
+            $mng = strip_tags($_POST['mensagen']);
+            $autor = strip_tags($_POST['autor']);
+
+            \models\bd::editar('mensagen_reitoria','autor = ?,mensagem = ?',
+            array($autor,$mng),$id);
+
+            if(@$imagem != "")
+            {
+                if(\models\bd::imagemValida($imagem) == true)
+                {
+                    $img =\models\bd::uploadFile($imagem);
+                    \models\bd::editar('mensagen_reitoria','img = ?',
+                    array($img),$id);
+                    \models\bd::msn('Atualizalçao realizada com sucesso','1');
+                }
+            }
+            else
+            {
+                \models\bd::msn('Imagem Invalida','2'); 
+            }
+                   
+            
+            
+        }
     }
 
 ?>

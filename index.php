@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	define('BASE_DIR',__DIR__.'/');
 	define('INCLUDE_PATH','/GestaoDeDocumentos/');
 	date_default_timezone_set('America/Sao_Paulo');
 	$_SESSION['sectaria'] =  TRUE;

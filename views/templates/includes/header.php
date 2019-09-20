@@ -73,6 +73,14 @@
 											 <a href="<?php echo INCLUDE_PATH?>Transporte">
 											 <span class="gn-icon gn-icon-article">Gestao de Tranporte </span></a>
 										</li>
+								<?php 
+									if($_SESSION['sectaria'] =  true){ ?>
+										<li>
+											 <a href="<?php echo INCLUDE_PATH?>CadastraBoletim">
+											 <span class="gn-icon gn-icon-article">Gestao do Boletim </span></a>
+										</li>
+
+								<?php }?>
 																		
 								</li>
 							</ul><!-- /gn-menu -->

@@ -122,5 +122,20 @@
                \models\bd::msn('Cadastro ja existente','2');
             }       
         }
+        public static function cadastro_boletim()
+        {
+            $imagem = $_FILES['imagem'];
+            $mng = strip_tags($_POST['mensagen']);
+            $autor = strip_tags($_POST['autor']);
+
+            if(\models\bd::imagemValida($imagem) == true)
+            {
+                $img =\models\bd::uploadFile($imagem);
+               \models\bd::inserir('mensagen_reitoria','?,?,?',array($img,$mng,$autor));
+               \models\bd::msn('Cadastro efeituado com sucesso','1');
+            }
+            else
+              \models\bd::msn('Imagem Invalida','2');
+        } 
     }
 ?>

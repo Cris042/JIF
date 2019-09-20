@@ -98,7 +98,25 @@
 			$sql->execute();		
 			return $sql->fetchAll();
 
-        }
+		}
+		public static function imagemValida($imagem)
+		{
+				if($imagem['type'] == 'image/jpeg' || $imagem['type'] == 'image/jpg' ||$imagem['type'] == 'image/png')		   
+					return true;
+				else
+					return false;
+
+		}
+		public static function uploadFile($file)
+		{
+			$formatoArquivo = explode('.',$file['name']);
+			$imagemNome = uniqid().'.'.$formatoArquivo[count($formatoArquivo) - 1];
+			if(move_uploaded_file($file['tmp_name'],BASE_DIR.'views/templates/upload/'.$imagemNome))
+					return $imagemNome;
+			else
+					return false;
+		}
+
 	
 
     }

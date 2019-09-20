@@ -1,3 +1,7 @@
+<?php 
+     $boletim = \models\bd::selectAll('mensagen_reitoria');
+     $cout = ceil(count($boletim));
+?>
 <div id="container"> 
     <div class="txt">
             <h3 class="text-center"> Lorem Ipsum  </h3><br><br>
@@ -28,7 +32,7 @@
               com software de editoração eletrônica como o Aldus PageMaker, incluindo versões do Lorem Ipsum.
             </P>
     </div><!--txt-->
-
+<?php if($cout != 0) { ?>
     <div class="wraper-table">            
         <table>    
            
@@ -51,6 +55,7 @@
 
         </table>  
     <div><!--wrapper-table-->
+<?php }?>
 
          
 </div><!-- container -->

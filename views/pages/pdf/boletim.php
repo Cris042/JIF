@@ -27,6 +27,10 @@
     $telefones = \MySql::conectar()->prepare("SELECT * FROM `telefones`");
     $telefones->execute(array());
     $telefones = $telefones->fetchAll();
+
+    $boletim = \MySql::conectar()->prepare("SELECT * FROM `mensagen_reitoria`");
+    $boletim->execute(array());
+    $boletim = $boletim->fetch();
     
  
 ?>
@@ -63,7 +67,10 @@
 
          .logo{
              width: 100%;
-             max-height: 500px;
+             padding: 0;
+             margin: 0;
+             height: 650px;
+             max-height: 650px;
          }
 
          .logo-img{
@@ -153,7 +160,7 @@
     <body>
 
         <div class="logo" >
-            <img class = "logo-img" src="../../views/templates/img/logo.JPG" />
+            <img class = "logo-img" src="../../views/templates/upload/<?php print_r($boletim[1]);?>" />
         </div>
 
         <h1 class="titulo"> Boletim 01 </h1>
@@ -161,31 +168,8 @@
         <div class="txt">
             <h1 > Mensagen da Reitoria </h1><br><br>
                 <p>
-                orem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. 
-                Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora
-                desconhecida pegou uma galera do tipo 
-                e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu não apenas cinco séculos,
-                mas também o salto para a composição eletrônica, permanecendo 
-                essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de
-                Letraset contendo passagens de Lorem Ipsum e, mais recentemente, 
-                com software de editoração eletrônica como o Aldus PageMaker, incluindo versões do Lorem Ipsum.
-                orem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. 
-                Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora
-                desconhecida pegou uma galera do tipo 
-                e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu não apenas cinco séculos,
-                mas também o salto para a composição eletrônica, permanecendo 
-                essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de
-                Letraset contendo passagens de Lorem Ipsum e, mais recentemente, 
-                com software de editoração eletrônica como o Aldus PageMaker, incluindo versões do Lorem Ipsum.
-                orem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. 
-                Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora
-                desconhecida pegou uma galera do tipo 
-                e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu não apenas cinco séculos,
-                mas também o salto para a composição eletrônica, permanecendo 
-                essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de
-                Letraset contendo passagens de Lorem Ipsum e, mais recentemente, 
-                com software de editoração eletrônica como o Aldus PageMaker, incluindo versões do Lorem Ipsum.
-            </p>
+                    <?php  print_r($boletim[2]);?>
+               </p>
         </div>
 
         <h2>  Coordenadores de modalidades </h2>
