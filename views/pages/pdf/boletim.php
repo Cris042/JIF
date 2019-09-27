@@ -10,7 +10,23 @@
     $docs = \models\bd::selectAll('boletim_documentos');
     $boletim = \models\bd::select('mensagen_reitoria');
     $comunicados = \models\bd::selectAll('comunicado');
-    $jogos = \models\bd::selectAll('jogo ORDER BY etapa');
+    $futsal_masculino = \models\bd::selectAll('jogo','modalidade = ?','etapa',array(19));
+    $futsal_femenino = \models\bd::selectAll('jogo','modalidade = ?','etapa',array(22)); 
+    $Handebol_masculino = \models\bd::selectAll('jogo','modalidade = ?','etapa',array(21)); 
+    $Handebol_femenino = \models\bd::selectAll('jogo','modalidade = ?','etapa',array(34)); 
+    $volei_masculino = \models\bd::selectAll('jogo','modalidade = ?','etapa',array(23)); 
+    $volei_femenino = \models\bd::selectAll('jogo','modalidade = ?','etapa',array(24));
+    $nataçao_masculino = \models\bd::selectAll('jogoindividual','modalidade = ?','data',array(25)); 
+    $nataçao_femenino = \models\bd::selectAll('jogoindividual','modalidade = ?','data',array(26));
+    $tenes_masculino = \models\bd::selectAll('jogoindividual','modalidade = ?','data',array(29)); 
+    $tenes_femenino = \models\bd::selectAll('jogoindividual','modalidade = ?','data',array(30));
+    $basquete = \models\bd::selectAll('jogo','modalidade = ?','etapa',array(31));
+    $atletismo_masculino = \models\bd::selectAll('jogoindividual','modalidade = ?','data',array(32));
+    $atletismo_femenino = \models\bd::selectAll('jogoindividual','modalidade = ?','data',array(33)); 
+    $futibol = \models\bd::selectAll('jogo','modalidade = ?','etapa',array(35));
+    $xadrez_femenino = \models\bd::selectAll('jogo','modalidade = ?','etapa',array(36));
+    $xadrez_masculino = \models\bd::selectAll('jogo','modalidade = ?','etapa',array(37));
+    
  
 ?>
 
@@ -173,7 +189,7 @@
             </table>
         </div><!--wraper-table-->
 
-        <h2>Jogos</h2>
+        <h2>Handebol masculino</h2>
         <div class="wraper-table">            
             <table>    
             
@@ -183,17 +199,15 @@
                    <th class="coluna-principla">Local</th>
                    <th class="coluna-principla">Grupo</th>
                    <th class="coluna-principla">Etapa</th>
-                   <th class="coluna-principla">Modalidade</th>
                    <th class="coluna-principla">Time 1</th>
                    <th class="coluna-principla">Time 2</th>
                 </tr>
 
-                <?php foreach($jogos as $key => $value) {
+                <?php foreach($Handebol_masculino as $key => $value) {
                   $local = \models\bd::select('local','local_id = ?',array($value['local']) );
                   $campus01 = \models\bd::select('campus','campus_id = ?', array($value['time1']) );
                   $campus02 = \models\bd::select('campus','campus_id = ?', array($value['time2']) );
                   $etapa = \models\bd::select('etapa','etapa_id = ?', array($value['etapa']) );
-                  $modalidade = \models\bd::select('modalidade','modalidade_id = ?', array(19) );
                
                 ?>
                     <tr>
@@ -202,14 +216,400 @@
                          <th><?php print_r($local[1]); ?></th>
                          <th><?php echo $value['grupo']; ?></th>
                          <th><?php print_r($etapa[1]); ?></th>
-                         <th><?php print_r($modalidade[1]); ?></th>
-                         <th><?php print_r($campus01[1]); ?></th>
-                         <th><?php print_r($campus02[1]); ?></th>                      
+                         <th><?php print_r($campus01[1]); ?>  (<?php echo $value['pontuacao1']; ?>)</th>
+                         <th><?php print_r($campus02[1]); ?>  (<?php echo $value['pontuacao2']; ?>)</th>                      
                     </tr>              
                 <?php }?>
 
             </table>
         </div><!--wraper-table-->
+
+        <h2>Handebol Femenino</h2>
+        <div class="wraper-table">            
+            <table>    
+            
+                <tr>  
+                   <th class="coluna-principla">Data</th>
+                   <th class="coluna-principla">Horario</th>
+                   <th class="coluna-principla">Local</th>
+                   <th class="coluna-principla">Grupo</th>
+                   <th class="coluna-principla">Etapa</th>
+                   <th class="coluna-principla">Time 1</th>
+                   <th class="coluna-principla">Time 2</th>
+                </tr>
+
+                <?php foreach($Handebol_femenino as $key => $value) {
+                  $local = \models\bd::select('local','local_id = ?',array($value['local']) );
+                  $campus01 = \models\bd::select('campus','campus_id = ?', array($value['time1']) );
+                  $campus02 = \models\bd::select('campus','campus_id = ?', array($value['time2']) );
+                  $etapa = \models\bd::select('etapa','etapa_id = ?', array($value['etapa']) );
+               
+                ?>
+                    <tr>
+                         <th><?php echo $value['data']; ?></th>
+                         <th><?php echo $value['horario']; ?></th>
+                         <th><?php print_r($local[1]); ?></th>
+                         <th><?php echo $value['grupo']; ?></th>
+                         <th><?php print_r($etapa[1]); ?></th>
+                         <th><?php print_r($campus01[1]); ?>  (<?php echo $value['pontuacao1']; ?>)</th>
+                         <th><?php print_r($campus02[1]); ?>  (<?php echo $value['pontuacao2']; ?>)</th>                      
+                    </tr>              
+                <?php }?>
+
+            </table>
+        </div><!--wraper-table-->
+
+        
+
+        <h2>Futisal Masculino</h2>
+        <div class="wraper-table">            
+            <table>    
+            
+                <tr>  
+                   <th class="coluna-principla">Data</th>
+                   <th class="coluna-principla">Horario</th>
+                   <th class="coluna-principla">Local</th>
+                   <th class="coluna-principla">Grupo</th>
+                   <th class="coluna-principla">Etapa</th>
+                   <th class="coluna-principla">Time 1</th>
+                   <th class="coluna-principla">Time 2</th>
+                </tr>
+
+                <?php foreach($futsal_masculino as $key => $value) {
+                  $local = \models\bd::select('local','local_id = ?',array($value['local']) );
+                  $campus01 = \models\bd::select('campus','campus_id = ?', array($value['time1']) );
+                  $campus02 = \models\bd::select('campus','campus_id = ?', array($value['time2']) );
+                  $etapa = \models\bd::select('etapa','etapa_id = ?', array($value['etapa']) );
+               
+                ?>
+                    <tr>
+                         <th><?php echo $value['data']; ?></th>
+                         <th><?php echo $value['horario']; ?></th>
+                         <th><?php print_r($local[1]); ?></th>
+                         <th><?php echo $value['grupo']; ?></th>
+                         <th><?php print_r($etapa[1]); ?></th>
+                         <th><?php print_r($campus01[1]); ?>  (<?php echo $value['pontuacao1']; ?>)</th>
+                         <th><?php print_r($campus02[1]); ?>  (<?php echo $value['pontuacao2']; ?>)</th>                      
+                    </tr>              
+                <?php }?>
+
+            </table>
+        </div><!--wraper-table-->
+
+        <h2>Futisal Femenino</h2>
+        <div class="wraper-table">            
+            <table>    
+            
+                <tr>  
+                   <th class="coluna-principla">Data</th>
+                   <th class="coluna-principla">Horario</th>
+                   <th class="coluna-principla">Local</th>
+                   <th class="coluna-principla">Grupo</th>
+                   <th class="coluna-principla">Etapa</th>
+                   <th class="coluna-principla">Time 1</th>
+                   <th class="coluna-principla">Time 2</th>
+                </tr>
+
+                <?php foreach($futsal_femenino as $key => $value) {
+                  $local = \models\bd::select('local','local_id = ?',array($value['local']) );
+                  $campus01 = \models\bd::select('campus','campus_id = ?', array($value['time1']) );
+                  $campus02 = \models\bd::select('campus','campus_id = ?', array($value['time2']) );
+                  $etapa = \models\bd::select('etapa','etapa_id = ?', array($value['etapa']) );
+               
+                ?>
+                    <tr>
+                         <th><?php echo $value['data']; ?></th>
+                         <th><?php echo $value['horario']; ?></th>
+                         <th><?php print_r($local[1]); ?></th>
+                         <th><?php echo $value['grupo']; ?></th>
+                         <th><?php print_r($etapa[1]); ?></th>
+                         <th><?php print_r($campus01[1]); ?>  (<?php echo $value['pontuacao1']; ?>)</th>
+                         <th><?php print_r($campus02[1]); ?>  (<?php echo $value['pontuacao2']; ?>)</th>                      
+                    </tr>              
+                <?php }?>
+
+            </table>
+        </div><!--wraper-table-->
+
+        <h2>Futibol</h2>
+        <div class="wraper-table">            
+            <table>    
+            
+                <tr>  
+                   <th class="coluna-principla">Data</th>
+                   <th class="coluna-principla">Horario</th>
+                   <th class="coluna-principla">Local</th>
+                   <th class="coluna-principla">Grupo</th>
+                   <th class="coluna-principla">Etapa</th>
+                   <th class="coluna-principla">Time 1</th>
+                   <th class="coluna-principla">Time 2</th>
+                </tr>
+
+                <?php foreach($futibol as $key => $value) {
+                  $local = \models\bd::select('local','local_id = ?',array($value['local']) );
+                  $campus01 = \models\bd::select('campus','campus_id = ?', array($value['time1']) );
+                  $campus02 = \models\bd::select('campus','campus_id = ?', array($value['time2']) );
+                  $etapa = \models\bd::select('etapa','etapa_id = ?', array($value['etapa']) );
+               
+                ?>
+                    <tr>
+                         <th><?php echo $value['data']; ?></th>
+                         <th><?php echo $value['horario']; ?></th>
+                         <th><?php print_r($local[1]); ?></th>
+                         <th><?php echo $value['grupo']; ?></th>
+                         <th><?php print_r($etapa[1]); ?></th>
+                         <th><?php print_r($campus01[1]); ?>  (<?php echo $value['pontuacao1']; ?>)</th>
+                         <th><?php print_r($campus02[1]); ?>  (<?php echo $value['pontuacao2']; ?>)</th>                      
+                    </tr>              
+                <?php }?>
+
+            </table>
+        </div><!--wraper-table-->
+
+        <h2>Basquete</h2>
+        <div class="wraper-table">            
+            <table>    
+            
+                <tr>  
+                   <th class="coluna-principla">Data</th>
+                   <th class="coluna-principla">Horario</th>
+                   <th class="coluna-principla">Local</th>
+                   <th class="coluna-principla">Grupo</th>
+                   <th class="coluna-principla">Etapa</th>
+                   <th class="coluna-principla">Time 1</th>
+                   <th class="coluna-principla">Time 2</th>
+                </tr>
+
+                <?php foreach($basquete as $key => $value) {
+                  $local = \models\bd::select('local','local_id = ?',array($value['local']) );
+                  $campus01 = \models\bd::select('campus','campus_id = ?', array($value['time1']) );
+                  $campus02 = \models\bd::select('campus','campus_id = ?', array($value['time2']) );
+                  $etapa = \models\bd::select('etapa','etapa_id = ?', array($value['etapa']) );
+               
+                ?>
+                    <tr>
+                         <th><?php echo $value['data']; ?></th>
+                         <th><?php echo $value['horario']; ?></th>
+                         <th><?php print_r($local[1]); ?></th>
+                         <th><?php echo $value['grupo']; ?></th>
+                         <th><?php print_r($etapa[1]); ?></th>
+                         <th><?php print_r($campus01[1]); ?>  (<?php echo $value['pontuacao1']; ?>)</th>
+                         <th><?php print_r($campus02[1]); ?>  (<?php echo $value['pontuacao2']; ?>)</th>                      
+                    </tr>              
+                <?php }?>
+
+            </table>
+        </div><!--wraper-table-->
+
+        <h2>Volei Masculino</h2>
+        <div class="wraper-table">            
+            <table>    
+            
+                <tr>  
+                   <th class="coluna-principla">Data</th>
+                   <th class="coluna-principla">Horario</th>
+                   <th class="coluna-principla">Local</th>
+                   <th class="coluna-principla">Grupo</th>
+                   <th class="coluna-principla">Etapa</th>
+                   <th class="coluna-principla">Time 1</th>
+                   <th class="coluna-principla">Time 2</th>
+                </tr>
+
+                <?php foreach($volei_masculino as $key => $value) {
+                  $local = \models\bd::select('local','local_id = ?',array($value['local']) );
+                  $campus01 = \models\bd::select('campus','campus_id = ?', array($value['time1']) );
+                  $campus02 = \models\bd::select('campus','campus_id = ?', array($value['time2']) );
+                  $etapa = \models\bd::select('etapa','etapa_id = ?', array($value['etapa']) );
+               
+                ?>
+                    <tr>
+                         <th><?php echo $value['data']; ?></th>
+                         <th><?php echo $value['horario']; ?></th>
+                         <th><?php print_r($local[1]); ?></th>
+                         <th><?php echo $value['grupo']; ?></th>
+                         <th><?php print_r($etapa[1]); ?></th>
+                         <th><?php print_r($campus01[1]); ?>  (<?php echo $value['pontuacao1']; ?>)</th>
+                         <th><?php print_r($campus02[1]); ?>  (<?php echo $value['pontuacao2']; ?>)</th>                      
+                    </tr>              
+                <?php }?>
+
+            </table>
+        </div><!--wraper-table-->
+
+        <h2>Volei Femenino</h2>
+        <div class="wraper-table">            
+            <table>    
+            
+                <tr>  
+                   <th class="coluna-principla">Data</th>
+                   <th class="coluna-principla">Horario</th>
+                   <th class="coluna-principla">Local</th>
+                   <th class="coluna-principla">Grupo</th>
+                   <th class="coluna-principla">Etapa</th>
+                   <th class="coluna-principla">Time 1</th>
+                   <th class="coluna-principla">Time 2</th>
+                </tr>
+
+                <?php foreach($volei_femenino as $key => $value) {
+                  $local = \models\bd::select('local','local_id = ?',array($value['local']) );
+                  $campus01 = \models\bd::select('campus','campus_id = ?', array($value['time1']) );
+                  $campus02 = \models\bd::select('campus','campus_id = ?', array($value['time2']) );
+                  $etapa = \models\bd::select('etapa','etapa_id = ?', array($value['etapa']) );
+               
+                ?>
+                    <tr>
+                         <th><?php echo $value['data']; ?></th>
+                         <th><?php echo $value['horario']; ?></th>
+                         <th><?php print_r($local[1]); ?></th>
+                         <th><?php echo $value['grupo']; ?></th>
+                         <th><?php print_r($etapa[1]); ?></th>
+                         <th><?php print_r($campus01[1]); ?>  (<?php echo $value['pontuacao1']; ?>)</th>
+                         <th><?php print_r($campus02[1]); ?>  (<?php echo $value['pontuacao2']; ?>)</th>                      
+                    </tr>              
+                <?php }?>
+
+            </table>
+        </div><!--wraper-table-->
+
+        <h2>Tenes de Messa masculino</h2>
+        <div class="wraper-table">            
+            <table>    
+            
+                <tr>  
+                   <th class="coluna-principla">Data</th>
+                   <th class="coluna-principla">Horario</th>
+                   <th class="coluna-principla">Local</th>
+                </tr>
+
+                <?php foreach($tenes_masculino as $key => $value) {
+                  $local = \models\bd::select('local','local_id = ?',array($value['local']) );            
+                ?>
+                    <tr>
+                         <th><?php echo $value['data']; ?></th>
+                         <th><?php echo $value['horario']; ?></th>
+                         <th><?php print_r($local[1]); ?></th>              
+                    </tr>              
+                <?php }?>
+
+            </table>
+        </div><!--wraper-table-->
+
+        <h2>Tenes de Messa Femenino</h2>
+        <div class="wraper-table">            
+            <table>    
+            
+                <tr>  
+                   <th class="coluna-principla">Data</th>
+                   <th class="coluna-principla">Horario</th>
+                   <th class="coluna-principla">Local</th>
+                </tr>
+
+                <?php foreach($tenes_femenino as $key => $value) {
+                  $local = \models\bd::select('local','local_id = ?',array($value['local']) );         
+                ?>
+                    <tr>
+                         <th><?php echo $value['data']; ?></th>
+                         <th><?php echo $value['horario']; ?></th>
+                         <th><?php print_r($local[1]); ?></th>           
+                    </tr>              
+                <?php }?>
+
+            </table>
+        </div><!--wraper-table-->
+
+        <h2>Nataçao masculino</h2>
+        <div class="wraper-table">            
+            <table>    
+            
+                <tr>  
+                   <th class="coluna-principla">Data</th>
+                   <th class="coluna-principla">Horario</th>
+                   <th class="coluna-principla">Local</th>
+                </tr>
+
+                <?php foreach($nataçao_masculino as $key => $value) {
+                  $local = \models\bd::select('local','local_id = ?',array($value['local']) );            
+                ?>
+                    <tr>
+                         <th><?php echo $value['data']; ?></th>
+                         <th><?php echo $value['horario']; ?></th>
+                         <th><?php print_r($local[1]); ?></th>              
+                    </tr>              
+                <?php }?>
+
+            </table>
+        </div><!--wraper-table-->
+
+        <h2>Nataçao Femenino</h2>
+        <div class="wraper-table">            
+            <table>    
+            
+                <tr>  
+                   <th class="coluna-principla">Data</th>
+                   <th class="coluna-principla">Horario</th>
+                   <th class="coluna-principla">Local</th>
+                </tr>
+
+                <?php foreach($nataçao_femenino as $key => $value) {
+                  $local = \models\bd::select('local','local_id = ?',array($value['local']) );            
+                ?>
+                    <tr>
+                         <th><?php echo $value['data']; ?></th>
+                         <th><?php echo $value['horario']; ?></th>
+                         <th><?php print_r($local[1]); ?></th>              
+                    </tr>              
+                <?php }?>
+
+            </table>
+        </div><!--wraper-table-->
+
+        <h2>Xadrez masculino</h2>
+        <div class="wraper-table">            
+            <table>    
+            
+                <tr>  
+                   <th class="coluna-principla">Data</th>
+                   <th class="coluna-principla">Horario</th>
+                   <th class="coluna-principla">Local</th>
+                </tr>
+
+                <?php foreach($xadrez_masculino as $key => $value) {
+                  $local = \models\bd::select('local','local_id = ?',array($value['local']) );
+                ?>
+                    <tr>
+                         <th><?php echo $value['data']; ?></th>
+                         <th><?php echo $value['horario']; ?></th>
+                         <th><?php print_r($local[1]); ?></th>              
+                    </tr>              
+                <?php }?>
+
+            </table>
+        </div><!--wraper-table-->
+
+        <h2>Xadrez Femenino</h2>
+        <div class="wraper-table">            
+            <table>    
+            
+                <tr>  
+                   <th class="coluna-principla">Data</th>
+                   <th class="coluna-principla">Horario</th>
+                   <th class="coluna-principla">Local</th>
+                </tr>
+
+                <?php foreach($xadrez_femenino as $key => $value) {
+                  $local = \models\bd::select('local','local_id = ?',array($value['local']) );
+                ?>
+                    <tr>
+                         <th><?php echo $value['data']; ?></th>
+                         <th><?php echo $value['horario']; ?></th>
+                         <th><?php print_r($local[1]); ?></th>                  
+                    </tr>              
+                <?php }?>
+
+            </table>
+        </div><!--wraper-table-->
+
+        
 
         
 
