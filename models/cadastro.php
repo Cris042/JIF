@@ -106,36 +106,61 @@
 
         public static function cadastro_hospitais()
         {
-            $plano = strip_tags($_POST['plano']);
-            $telefone = strip_tags($_POST['telefone']);
-            $endereco = strip_tags($_POST['endereco']);
-            $instituicao = strip_tags($_POST['instituicao']);        
-            $verifica_tel = \models\bd::verifica('hospitais','telefone = ?',array($telefone));
+             $plano = strip_tags($_POST['plano']);
+             $telefone = strip_tags($_POST['telefone']);
+             $endereco = strip_tags($_POST['endereco']);
+             $instituicao = strip_tags($_POST['instituicao']);        
+             $verifica_tel = \models\bd::verifica('hospitais','telefone = ?',array($telefone));
             
-            if($verifica_tel == true)
-            {
-              \models\bd::inserir('hospitais','?,?,?,?',array($plano,$telefone,$endereco,$instituicao));
-              \models\bd::msn('Cadastro efeituado com sucesso','1');
-            }    
-            else
-            {
-               \models\bd::msn('Cadastro ja existente','2');
-            }       
+               if($verifica_tel == true)
+               {
+               \models\bd::inserir('hospitais','?,?,?,?',array($plano,$telefone,$endereco,$instituicao));
+               \models\bd::msn('Cadastro efeituado com sucesso','1');
+               }    
+               else
+               {
+                  \models\bd::msn('Cadastro ja existente','2');
+               }       
         }
         public static function cadastro_boletim()
         {
-            $imagem = $_FILES['imagem'];
-            $mng = strip_tags($_POST['mensagen']);
-            $autor = strip_tags($_POST['autor']);
+             $imagem = $_FILES['imagem'];
+             $mng = strip_tags($_POST['mensagen']);
+             $autor = strip_tags($_POST['autor']);
+             $imagens = array();
+             $amountFiles = count($_FILES['imagems']['name']);
+             $imgvalidas = false;
 
-            if(\models\bd::imagemValida($imagem) == true)
-            {
-                $img =\models\bd::uploadFile($imagem);
-               \models\bd::inserir('mensagen_reitoria','?,?,?',array($img,$mng,$autor));
-               \models\bd::msn('Cadastro efeituado com sucesso','1');
-            }
-            else
-              \models\bd::msn('Imagem Invalida','2');
+               for($i =0; $i < @$amountFiles; $i++)
+               {
+                     $imagemAtual = ['type'=>$_FILES['imagems']['type'][$i],
+                     'size'=>$_FILES['imagems']['size'][$i]];
+
+                     if(\models\bd::imagemValida($imagemAtual) == true)
+                        $imgvalidas = true;
+                     else
+                        $imgvalidas = false;
+               }
+
+              
+               if(\models\bd::imagemValida($imagem) == true && $imgvalidas == true )
+               {
+                  $img =\models\bd::uploadFile($imagem);
+                  \models\bd::inserir('mensagen_reitoria','?,?,?',array($img,$mng,$autor));
+                  for($i = 0; $i < $amountFiles; $i++)
+                  {
+                     $imagemAtual = ['tmp_name'=>$_FILES['imagems']['tmp_name'][$i],
+                        'name'=>$_FILES['imagems']['name'][$i]];
+                     $imagens[] = \models\bd::uploadFile($imagemAtual);
+                  }
+                  foreach ($imagens as $key => $value) 
+                  {
+                      \models\bd::inserir('boletim_documentos','?',array($value));
+                  }
+                  \models\bd::msn('Cadastro efeituado com sucesso','1');
+               }
+               else
+               \models\bd::msn('Imagem Invalida','2');
         } 
     }
 ?>

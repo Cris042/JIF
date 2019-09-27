@@ -184,24 +184,55 @@
             @$imagem = $_FILES['imagem'];
             $mng = strip_tags($_POST['mensagen']);
             $autor = strip_tags($_POST['autor']);
+            $amountFiles = count($_FILES['imagems']['name']);
+            $imgvalidas = false;
 
-            \models\bd::editar('mensagen_reitoria','autor = ?,mensagem = ?',
-            array($autor,$mng),$id);
+               
+                \models\bd::editar('mensagen_reitoria','autor = ?,mensagem = ?',
+                array($autor,$mng),$id);
+                
 
-            if(@$imagem != "")
-            {
-                if(\models\bd::imagemValida($imagem) == true)
+                if($imagem != "")
                 {
-                    $img =\models\bd::uploadFile($imagem);
-                    \models\bd::editar('mensagen_reitoria','img = ?',
-                    array($img),$id);
-                    \models\bd::msn('Atualizalçao realizada com sucesso','1');
+                    if(\models\bd::imagemValida($imagem) == true)
+                    {
+                        $img =\models\bd::uploadFile($imagem);
+                        \models\bd::editar('mensagen_reitoria','img = ?',
+                        array($img),$id);
+                    }
+                  
                 }
-            }
-            else
-            {
-                \models\bd::msn('Imagem Invalida','2'); 
-            }
+
+                for($i =0; $i < @$amountFiles; $i++)
+                {
+                        $imagemAtual = ['type'=>$_FILES['imagems']['type'][$i],
+                        'size'=>$_FILES['imagems']['size'][$i]];
+
+                        if(\models\bd::imagemValida($imagemAtual) == true)
+                        $imgvalidas = true;
+                        else
+                        $imgvalidas = false;
+                }
+
+                if($amountFiles != 0 && $imgvalidas == true )
+                {
+                    $sql = \MySql::conectar()->prepare("DELETE FROM boletim_documentos ");
+                    $sql->execute();
+
+                    for($i = 0; $i < $amountFiles; $i++)
+                    {
+                        $imagemAtual = ['tmp_name'=>$_FILES['imagems']['tmp_name'][$i],
+                            'name'=>$_FILES['imagems']['name'][$i]];
+                        $imagens[] = \models\bd::uploadFile($imagemAtual);
+                    }
+                    foreach ($imagens as $key => $value) 
+                    {
+                        \models\bd::inserir('boletim_documentos','?',array($value));
+                    }
+                   
+                }
+                
+                \models\bd::msn('Atualizalçao realizada com sucesso','1');
                    
             
             

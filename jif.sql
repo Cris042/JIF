@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15-Set-2019 às 18:41
+-- Tempo de geração: 27-Set-2019 às 12:57
 -- Versão do servidor: 10.3.16-MariaDB
 -- versão do PHP: 7.3.7
 
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `jif`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `boletim_documentos`
+--
+
+CREATE TABLE `boletim_documentos` (
+  `id` int(11) NOT NULL,
+  `imagem` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `boletim_documentos`
+--
+
+INSERT INTO `boletim_documentos` (`id`, `imagem`) VALUES
+(37, '5d8dead34021a.jpg'),
+(38, '5d8dead34051a.jpg'),
+(39, '5d8dead3407dc.jpg');
 
 -- --------------------------------------------------------
 
@@ -100,12 +120,9 @@ CREATE TABLE `comunicado` (
 --
 
 INSERT INTO `comunicado` (`id`, `mensagen`, `titulo`) VALUES
-(22, '  Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li      ', 'ola mundo'),
-(25, 'Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li        ', 'ola mundo 8'),
-(28, ' Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li       ', 'ola mundo 0'),
-(29, ' Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li       ', 'ola mundo 4'),
-(30, ' Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li       ', 'TESTE'),
-(31, ' Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    Lorem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um li                                            \r\n                                    ', 'TEXTE');
+(1, '  Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum.', 'AlimentaÃ§ao'),
+(2, '  Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum.', 'Hospedagem'),
+(3, '  Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum.', 'Regras');
 
 -- --------------------------------------------------------
 
@@ -125,8 +142,16 @@ CREATE TABLE `coordenadores_modalidades` (
 --
 
 INSERT INTO `coordenadores_modalidades` (`id`, `cargo`, `nome`, `email`) VALUES
-(3, 'gernete volei', 'joao s', 'joao3@gamil.com'),
-(9, 'gernete futibol', 'joao silva', 'joao1@gamil.com');
+(1, 'Coordenador TÃ©cnico Atletismo', 'joao', 'joao@gmail.com'),
+(2, 'Coordenador TÃ©cnico Basquete', 'joao', 'user1@gmail.com'),
+(3, 'Coordenador TÃ©cnico Futsal', 'joao', 'user3@gmail.com'),
+(4, 'Coordenador TÃ©cnico Handebol', 'joao', 'joao4@gmail.com'),
+(5, 'Coordenador TÃ©cnico JudÃ´', 'joao', 'user5@gmail.com'),
+(6, 'Coordenador TÃ©cnico NataÃ§Ã£o', 'joao', 'user6@gmail.com'),
+(7, 'Coordenador TÃ©cnico', 'joao', 'user7@gmail.com'),
+(8, 'Coordenador TÃ©cnico Voleibol', 'joao', 'user8@gmail.com'),
+(9, 'Coordenador TÃ©cnico VÃ´lei de Praia', 'joao', 'user9@gmail.com'),
+(10, 'Coordenador TÃ©cnico Xadrez', 'joao', 'user@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -167,7 +192,10 @@ CREATE TABLE `hospitais` (
 --
 
 INSERT INTO `hospitais` (`id`, `plano`, `telefone`, `endereco`, `instituicao`) VALUES
-(5, 'sus', '(63) 43423-4329', 'centro', 'sus');
+(1, 'sus', '(00) 00000-0001', 'centro', 'sus'),
+(2, 'sus', '(00) 00000-0002', 'centro', 'sus'),
+(3, 'sus', '(00) 00000-0003', 'centro', 'sus'),
+(4, 'sus', '(00) 00000-0004', 'centro', 'sus');
 
 -- --------------------------------------------------------
 
@@ -1522,6 +1550,26 @@ INSERT INTO `log` (`log_id`, `user_id`, `acao`, `tabela`, `registro`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `mensagen_reitoria`
+--
+
+CREATE TABLE `mensagen_reitoria` (
+  `id` int(11) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `mensagem` text NOT NULL,
+  `autor` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `mensagen_reitoria`
+--
+
+INSERT INTO `mensagen_reitoria` (`id`, `img`, `mensagem`, `autor`) VALUES
+(22, '5d8de8bb269b8.jpg', '          orem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. orem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum. orem Ipsum Ã© simplesmente um texto fictÃ­cio da indÃºstria tipogrÃ¡fica e de impressÃ£o. Lorem Ipsum Ã© o texto fictÃ­cio padrÃ£o do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu nÃ£o apenas cinco sÃ©culos, mas tambÃ©m o salto para a composiÃ§Ã£o eletrÃ´nica, permanecendo essencialmente inalterado. Foi popularizado na dÃ©cada de 1960 com o lanÃ§amento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoraÃ§Ã£o eletrÃ´nica como o Aldus PageMaker, incluindo versÃµes do Lorem Ipsum.         ', 'jose augusto');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `modalidade`
 --
 
@@ -1562,7 +1610,6 @@ INSERT INTO `modalidade` (`modalidade_id`, `mnome`, `msexo`) VALUES
 CREATE TABLE `organizacao` (
   `id` int(11) NOT NULL,
   `cargo` varchar(255) NOT NULL,
-  `responsavel` varchar(255) NOT NULL,
   `telefone` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `nome` varchar(255) NOT NULL
@@ -1572,9 +1619,34 @@ CREATE TABLE `organizacao` (
 -- Extraindo dados da tabela `organizacao`
 --
 
-INSERT INTO `organizacao` (`id`, `cargo`, `responsavel`, `telefone`, `email`, `nome`) VALUES
-(2, 'gernete', 'joao s', '(22) 32312-3126', 'luiz22@gmail.com', 'luiz'),
-(4, 'gernete', 'cris', '(66) 66666-6666', '66@gmail.com', 'user66');
+INSERT INTO `organizacao` (`id`, `cargo`, `telefone`, `email`, `nome`) VALUES
+(1, 'PRESIDENTE DA COMISSÃƒO ORGANIZADORA', '(00) 00000-0001', 'joao@gmail.com', 'joao'),
+(2, 'PRESIDENTE DA COMISSÃƒO DOS JIFs', '(00) 00000-0002', 'joao1@gmail.com', 'joao'),
+(3, 'COORDENAÃ‡ÃƒO GERAL', '(00) 00000-0003', 'joao2@gmail.com', 'joao'),
+(4, 'AUXILIAR DA COORDENAÃ‡ÃƒO LOCAL', '(00) 00000-0004', 'joao4@gmail.com', 'joao'),
+(5, 'COORDENAÃ‡ÃƒO TÃ‰CNICA DESPORTIVA', '(00) 00000-0005', 'joao6@gmail.com', 'joao'),
+(6, 'AUXILÃAR DA COORDENAÃ‡ÃƒO TÃ‰CNICA', '(00) 00000-0007', 'joao7@gmail.com', 'joao'),
+(7, 'COORDENAÃ‡ÃƒO DE ARBITRAGEM', '(00) 00000-0008', 'joao8@gmail.com', 'joao'),
+(8, 'SECRETARIA', '(00) 00000-0009', 'user@gmail.com', 'joao'),
+(9, 'PRESIDENTE DA COMISSÃƒO DISCIPLINAR', '(00) 00000-0010', 'user10@gmail.com', 'joao'),
+(10, 'COORDENADORA ADMINISTRATIVA', '(00) 00000-0011', 'user11@gmail.com', 'joao'),
+(11, 'COORDENADOR DE CERIMONIAIS', '(00) 00000-0012', 'user12@gmail.com', 'joao'),
+(12, 'COORDENADOR DE RECREAÃ‡ÃƒO E DE CULTURA', '(00) 00000-0015', 'user15@gmail.com', 'joao'),
+(13, 'COORDENADORA DE ALOJAMENTO', '(00) 00000-0016', 'joao16@gmail.com', 'joao'),
+(14, 'COORDENADORA DE HOSDEDAGEM', '(00) 00000-0018', 'user18@gmail.com', 'joao'),
+(15, 'COORDENADORA DE ALIMENTACÃƒO', '(00) 00000-0022', 'user22@gmail.com', 'joao'),
+(16, 'COORDENADORA DE SERVICOS GERAIS', '(00) 00000-0023', 'user23@gmail.com', 'joao'),
+(17, 'COORDENADOR DE TRANSPORTE', '(00) 00000-0026', 'user26@gmail.com', 'joao'),
+(18, 'COORDENADOR DE MANUTENÃ‡ÃƒO', '(00) 00000-0030', 'user30@gmail.com', 'joao'),
+(19, 'COORDENADOR DE TECNOLOGIA DA INFORMAÃ‡ÃƒO', '(00) 00000-0066', 'user66@gmail.com', 'user'),
+(20, 'COORDENADORA DE ASSISTÃŠNCIA ESTUDANTIL', '(00) 00000-0032', 'user32@gmail.com', 'joao'),
+(21, 'COORDENADOR EXECUTIVO DO CFO', '(00) 00000-0035', 'user35@gmail.com', 'joao'),
+(22, 'COORDENADOR DE RECEPÃ‡ÃƒO E INFORMAÃ‡Ã•ES', '(00) 00000-0040', 'user40@gmail.com', 'joao'),
+(23, 'COORDENADOR DE MULTIMEIOS', '(00) 00000-0041', 'joao41@gmail.com', 'joao'),
+(24, 'COORDENADORA DE COMUNICAÃ‡ÃƒO SOCIAL', '(00) 00000-0042', 'user43@gmail.com', 'joao'),
+(25, 'COORDENADORA DE ASSISTÃŠNCIA ESTUDANTIL', '(00) 00000-0049', 'user49@gmail.com', 'joao'),
+(26, 'COORDENADORA DE SAÃšDE', '(00) 00000-0051', 'user51@gmail.com', 'user'),
+(27, 'COORDENADOR DE TURISMO', '(00) 00000-0057', 'user57@gmail.com', 'user');
 
 -- --------------------------------------------------------
 
@@ -1695,8 +1767,8 @@ CREATE TABLE `telefones` (
 --
 
 INSERT INTO `telefones` (`id`, `numero`, `instituicao`) VALUES
-(1, '(42) 34233-2433', 'taxiI'),
-(3, '(42) 34233-2436', 'uber');
+(1, '(44) 53423-4823', 'uber'),
+(2, '(34) 34-2384', 'taxi');
 
 -- --------------------------------------------------------
 
@@ -1716,9 +1788,8 @@ CREATE TABLE `transporte` (
 --
 
 INSERT INTO `transporte` (`id`, `numero_linha`, `telefone`, `regiao`) VALUES
-(1, 'NÂ° 34', '(34) 32423-4234', 'centro'),
-(2, 'NÂ° 334', '(32) 34342-3434', 'ola'),
-(4, 'NÂ° 24234', '(34) 32342-3423', 'efe');
+(1, 'NÂ° 3233', '(46) 54656-5654', 'centro'),
+(2, 'NÂ° 423', '(32) 43242-3423', 'centro');
 
 -- --------------------------------------------------------
 
@@ -1739,8 +1810,8 @@ CREATE TABLE `turismo` (
 --
 
 INSERT INTO `turismo` (`id`, `data`, `hora`, `local`, `nome`) VALUES
-(2, '2019-10-08', '2312', 'cinema', 'cienma'),
-(4, '2019-10-02', '12:34', 'shopping', 'cinema');
+(1, '2019-10-02', '12:22', 'centro', 'cinema'),
+(2, '2019-10-03', '11:11', 'cinema', 'cinema');
 
 -- --------------------------------------------------------
 
@@ -1769,6 +1840,12 @@ INSERT INTO `user` (`id`, `email`, `senha`, `nivel`, `img`, `nome`, `status`, `c
 --
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices para tabela `boletim_documentos`
+--
+ALTER TABLE `boletim_documentos`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `campus`
@@ -1858,6 +1935,12 @@ ALTER TABLE `log`
   ADD PRIMARY KEY (`log_id`);
 
 --
+-- Índices para tabela `mensagen_reitoria`
+--
+ALTER TABLE `mensagen_reitoria`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `modalidade`
 --
 ALTER TABLE `modalidade`
@@ -1923,6 +2006,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT de tabela `boletim_documentos`
+--
+ALTER TABLE `boletim_documentos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
 -- AUTO_INCREMENT de tabela `campus`
 --
 ALTER TABLE `campus`
@@ -1938,13 +2027,13 @@ ALTER TABLE `chamada`
 -- AUTO_INCREMENT de tabela `comunicado`
 --
 ALTER TABLE `comunicado`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `coordenadores_modalidades`
 --
 ALTER TABLE `coordenadores_modalidades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `etapa`
@@ -1956,7 +2045,7 @@ ALTER TABLE `etapa`
 -- AUTO_INCREMENT de tabela `hospitais`
 --
 ALTER TABLE `hospitais`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `jogador`
@@ -2001,6 +2090,12 @@ ALTER TABLE `log`
   MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1139;
 
 --
+-- AUTO_INCREMENT de tabela `mensagen_reitoria`
+--
+ALTER TABLE `mensagen_reitoria`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
 -- AUTO_INCREMENT de tabela `modalidade`
 --
 ALTER TABLE `modalidade`
@@ -2010,7 +2105,7 @@ ALTER TABLE `modalidade`
 -- AUTO_INCREMENT de tabela `organizacao`
 --
 ALTER TABLE `organizacao`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de tabela `resultado`
@@ -2034,19 +2129,19 @@ ALTER TABLE `servidor`
 -- AUTO_INCREMENT de tabela `telefones`
 --
 ALTER TABLE `telefones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `transporte`
 --
 ALTER TABLE `transporte`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `turismo`
 --
 ALTER TABLE `turismo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `user`

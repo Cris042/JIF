@@ -31,6 +31,10 @@
     $boletim = \MySql::conectar()->prepare("SELECT * FROM `mensagen_reitoria`");
     $boletim->execute(array());
     $boletim = $boletim->fetch();
+
+    $docs = \MySql::conectar()->prepare("SELECT * FROM `boletim_documentos`");
+    $docs->execute(array());
+    $docs = $docs->fetchAll();
     
  
 ?>
@@ -76,6 +80,11 @@
          .logo-img{
              width: 100%;
              height: 100%;
+         }
+
+         .doc-img{
+             margin-top: 60px;
+             height: 500px;
          }
 
          .corpo ul{
@@ -311,9 +320,11 @@
             </table>
         </div><!--wraper-table-->
 
-        <div class="logo" >
-            <img class = "logo-img" src="../../views/templates/img/assinatura.JPG" />
+    <?php foreach($docs as $key => $value) {?>
+        <div>
+            <img class = "doc-img" src="../../views/templates/upload/<?php echo ($value['imagem']);?>" />
         </div>
+    <?php }?>
    
     </body>
 </html>

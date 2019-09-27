@@ -1,5 +1,6 @@
 <?php 
-     $boletim = \models\bd::select('mensagen_reitoria');
+     $boletim = \models\bd::selectAll('mensagen_reitoria');
+     $boletim_dados = \models\bd::select('mensagen_reitoria');
      $cout = ceil(count($boletim));
 ?>
 <div id="container"> 
@@ -25,8 +26,11 @@
                 <label for="autor">Autor</label>
                 <input type="text" name ="autor" required/>
 
-                <label for="img">Imagem</label>
+                <label for="img">Logo</label>
                 <input type="file" name = "imagem" required/>
+
+                <label for="img">Documentos</label>
+                <input multiple type="file" name="imagems[]" required/>
 
 
                 <input type="submit" name="cadastra" value="enviar" />
@@ -51,16 +55,19 @@
             <form method="post"  enctype="multipart/form-data" >
                 
                 <label for="mensagen">Mensagen</label>
-                <textarea type="text" name="mensagen" value="<?php echo $boletim[2] ?>" > <?php echo $boletim[2] ?> </textarea>
+                <textarea type="text" name="mensagen" value="<?php echo $boletim_dados[2] ?>" > <?php echo $boletim_dados[2] ?> </textarea>
 
                 <label for="autor">Autor</label>
-                <input type="text" name ="autor"  value="<?php echo $boletim[3] ?>"/>
+                <input type="text" name ="autor"  value="<?php echo $boletim_dados[3] ?>"/>
 
                 <label for="img">Imagem</label>
                 <input type="file" name = "imagem" />
 
-                <input type="hidden" name="imgatual" value="<?php echo $boletim[1] ?>" />
-                <input type="hidden" name="id" value="<?php echo $boletim[0] ?>" />
+                <label for="img">Documentos</label>
+                <input multiple type="file" name="imagems[]" />
+
+                <input type="hidden" name="imgatual" value="<?php echo $boletim_dados[1] ?>" />
+                <input type="hidden" name="id" value="<?php echo $boletim_dados[0] ?>" />
                 
                 <input type="submit" name="editar" value="enviar" />
             </form>
