@@ -1,171 +1,23 @@
 <?php 
     include('../../MySql.php'); 
-    $coordenadores = \MySql::conectar()->prepare("SELECT * FROM `coordenadores_modalidades`");
-    $coordenadores->execute(array());
-    $coordenadores = $coordenadores->fetchAll();
-
-    $organizacao = \MySql::conectar()->prepare("SELECT * FROM `organizacao`");
-    $organizacao->execute(array());
-    $organizacao = $organizacao->fetchAll();
-    
-    $comunicados = \MySql::conectar()->prepare("SELECT * FROM `comunicado`");
-    $comunicados->execute(array());
-    $comunicados = $comunicados->fetchAll();
-    
-    $hospitais = \MySql::conectar()->prepare("SELECT * FROM `hospitais`");
-    $hospitais->execute(array());
-    $hospitais = $hospitais->fetchAll();
-    
-    $turismo = \MySql::conectar()->prepare("SELECT * FROM `turismo`");
-    $turismo->execute(array());
-    $turismo = $turismo->fetchAll();
-    
-    $transporte = \MySql::conectar()->prepare("SELECT * FROM `transporte`");
-    $transporte->execute(array());
-    $transporte = $transporte->fetchAll();
-    
-    $telefones = \MySql::conectar()->prepare("SELECT * FROM `telefones`");
-    $telefones->execute(array());
-    $telefones = $telefones->fetchAll();
-
-    $boletim = \MySql::conectar()->prepare("SELECT * FROM `mensagen_reitoria`");
-    $boletim->execute(array());
-    $boletim = $boletim->fetch();
-
-    $docs = \MySql::conectar()->prepare("SELECT * FROM `boletim_documentos`");
-    $docs->execute(array());
-    $docs = $docs->fetchAll();
-    
+    include('../../models/bd.php'); 
+    $coordenadores = \models\bd::selectAll('coordenadores_modalidades');
+    $organizacao = \models\bd::selectAll('organizacao');
+    $hospitais = \models\bd::selectAll('hospitais');
+    $turismo = \models\bd::selectAll('turismo');
+    $transporte = \models\bd::selectAll('transporte');
+    $telefones = \models\bd::selectAll('telefones');
+    $docs = \models\bd::selectAll('boletim_documentos');
+    $boletim = \models\bd::select('mensagen_reitoria');
+    $comunicados = \models\bd::selectAll('comunicado');
  
 ?>
 
 <html>
-    
-<style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-
-       
-
-        .card{
-             width: 45%;
-             margin-bottom: 50px;
-             float: left;
-         }
-
-         .card-msn{
-             margin-top: 50px;
-             width: 100%;
-         }
-
-      
-         .card-img{
-             width: 50px;
-             height: 50px;
-             margin-bottom: 10px;
-             margin-left: 48%;
-             border-radius: 50%;
-         }
-
-         .logo{
-             width: 100%;
-             padding: 0;
-             margin: 0;
-             height: 650px;
-             max-height: 650px;
-         }
-
-         .logo-img{
-             width: 100%;
-             height: 100%;
-         }
-
-         .doc-img{
-             margin-top: 60px;
-             height: 500px;
-         }
-
-         .corpo ul{
-             text-align: center;
-         }
-
-         .corpo-msn ul{
-             margin-left: 10%;
-             margin-right: 10%;
-             margin-top: 10px;
-         }
-         
-         ul li{
-             list-style: none;
-         }
-
-         h2{
-             text-align: center;
-             color: darkgreen;
-             margin-top: 80px;
-             margin-bottom: 80px;
-         }
-
-         h1{
-             color: darkgreen;
-             text-align: center;
-         }
-
-         .titulo{
-             margin-bottom: 120px;
-             margin-top: 120px;
-         }
-
-         .txt{
-             text-align: justify;
-         }
-
-        .wraper-table{
-            max-width: 90%;
-            overflow-x: auto;
-            position: relative;
-            left: 50%;
-            z-index: 0;
-            transform:translate(-50%,0%);
-            margin-top: 5%;
-            margin-bottom: 5%;
-        -ms-transform:translate(-50%,0%);	
-       }
-
-        table{
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        td, th{
-            border: 1px solid #000;
-            padding: 8px;
-        }
-        
-    
-        th{
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: justify;
-            background: #fff;
-            color: #000;
-            font-weight: 100;
-        }
-
-        .coluna-principla{
-            background: #00a000;
-            text-align: center;
-        }
-
-        .li-mensagem{
-            text-align: justify;
-        }
-
+    <head>
+        <link rel="stylesheet" type="text/css" href="../../views/templates/css/pdf.css" />
+    </head>
  
- </style>
-    
     <body>
 
         <div class="logo" >

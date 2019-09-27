@@ -11,9 +11,9 @@
             <?php 
                 if(@$_SESSION['mensagen'] == true);
                 {
-                echo @$_SESSION['msn'];
-                unset($_SESSION['msn']);
-                @$_SESSION['mensagen'] = false;
+                    echo @$_SESSION['msn'];
+                    unset($_SESSION['msn']);
+                    @$_SESSION['mensagen'] = false;
                 }          
             ?>
 
@@ -45,9 +45,9 @@
             <?php 
                 if(@$_SESSION['mensagen'] == true);
                 {
-                echo @$_SESSION['msn'];
-                unset($_SESSION['msn']);
-                @$_SESSION['mensagen'] = false;
+                    echo @$_SESSION['msn'];
+                    unset($_SESSION['msn']);
+                    @$_SESSION['mensagen'] = false;
                 }          
             ?>
 
@@ -66,7 +66,6 @@
                 <label for="img">Documentos</label>
                 <input multiple type="file" name="imagems[]" />
 
-                <input type="hidden" name="imgatual" value="<?php echo $boletim_dados[1] ?>" />
                 <input type="hidden" name="id" value="<?php echo $boletim_dados[0] ?>" />
                 
                 <input type="submit" name="editar" value="enviar" />

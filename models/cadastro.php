@@ -114,8 +114,8 @@
             
                if($verifica_tel == true)
                {
-               \models\bd::inserir('hospitais','?,?,?,?',array($plano,$telefone,$endereco,$instituicao));
-               \models\bd::msn('Cadastro efeituado com sucesso','1');
+                  \models\bd::inserir('hospitais','?,?,?,?',array($plano,$telefone,$endereco,$instituicao));
+                  \models\bd::msn('Cadastro efeituado com sucesso','1');
                }    
                else
                {
