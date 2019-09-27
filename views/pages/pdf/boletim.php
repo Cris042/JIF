@@ -10,6 +10,7 @@
     $docs = \models\bd::selectAll('boletim_documentos');
     $boletim = \models\bd::select('mensagen_reitoria');
     $comunicados = \models\bd::selectAll('comunicado');
+    $jogos = \models\bd::selectAll('jogo ORDER BY etapa');
  
 ?>
 
@@ -171,6 +172,46 @@
 
             </table>
         </div><!--wraper-table-->
+
+        <h2>Jogos</h2>
+        <div class="wraper-table">            
+            <table>    
+            
+                <tr>  
+                   <th class="coluna-principla">Data</th>
+                   <th class="coluna-principla">Horario</th>
+                   <th class="coluna-principla">Local</th>
+                   <th class="coluna-principla">Grupo</th>
+                   <th class="coluna-principla">Etapa</th>
+                   <th class="coluna-principla">Modalidade</th>
+                   <th class="coluna-principla">Time 1</th>
+                   <th class="coluna-principla">Time 2</th>
+                </tr>
+
+                <?php foreach($jogos as $key => $value) {
+                  $local = \models\bd::select('local','local_id = ?',array($value['local']) );
+                  $campus01 = \models\bd::select('campus','campus_id = ?', array($value['time1']) );
+                  $campus02 = \models\bd::select('campus','campus_id = ?', array($value['time2']) );
+                  $etapa = \models\bd::select('etapa','etapa_id = ?', array($value['etapa']) );
+                  $modalidade = \models\bd::select('modalidade','modalidade_id = ?', array(19) );
+               
+                ?>
+                    <tr>
+                         <th><?php echo $value['data']; ?></th>
+                         <th><?php echo $value['horario']; ?></th>
+                         <th><?php print_r($local[1]); ?></th>
+                         <th><?php echo $value['grupo']; ?></th>
+                         <th><?php print_r($etapa[1]); ?></th>
+                         <th><?php print_r($modalidade[1]); ?></th>
+                         <th><?php print_r($campus01[1]); ?></th>
+                         <th><?php print_r($campus02[1]); ?></th>                      
+                    </tr>              
+                <?php }?>
+
+            </table>
+        </div><!--wraper-table-->
+
+        
 
     <?php foreach($docs as $key => $value) {?>
         <div>

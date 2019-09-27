@@ -1,5 +1,6 @@
 <?php 
      $boletim = \models\bd::selectAll('mensagen_reitoria');
+     $jogos = \models\bd::selectAll('jogo');
      $cout = ceil(count($boletim));
 ?>
 <div id="container"> 
@@ -55,6 +56,7 @@
 
         </table>  
     <div><!--wrapper-table-->
+   
 <?php }?>
 
          

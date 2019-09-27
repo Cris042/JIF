@@ -11,12 +11,12 @@
 		{
 			if($query != false)
 			{
-				$sql = \MySql::conectar()->prepare("SELECT * FROM `$table` WHERE $query");
+				$sql = \MySql::conectar()->prepare("SELECT * FROM $table WHERE $query");
 				$sql->execute($arr);
 			}
 			else
 			{
-				$sql =\MySql::conectar()->prepare("SELECT * FROM `$table`");
+				$sql =\MySql::conectar()->prepare("SELECT * FROM $table");
 				$sql->execute();
 			}
 			return $sql->fetch();
@@ -26,19 +26,20 @@
 		{
 			if($query != false)
 			{
-				$sql = \MySql::conectar()->prepare("SELECT * FROM `$table` WHERE $query ORDER BY $order ASC");
+				$sql = \MySql::conectar()->prepare("SELECT * FROM $table WHERE $query ORDER BY $order ASC");
 				$sql->execute($arr);
 			}
 			else
 			{
-				$sql = \MySql::conectar()->prepare("SELECT * FROM `$table`");
+				$sql = \MySql::conectar()->prepare("SELECT * FROM $table ");
 				$sql->execute();
 			}
 			
 			return $sql->fetchAll();
 
-        }
-        
+		}
+		
+	
         public static function excluir($table,$id)
 		{			
 			 $sql = \MySql::conectar()->prepare("DELETE FROM  $table  WHERE id = ? ");

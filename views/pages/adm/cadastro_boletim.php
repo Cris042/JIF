@@ -6,6 +6,7 @@
 <div id="container"> 
     <?php if($cout == 0)  {?>     
         <section class="formulario">
+            
             <h1>Cadastra Boletim</h1>
 
             <?php 
@@ -18,8 +19,7 @@
             ?>
 
 
-            <form method="post"  enctype="multipart/form-data" >
-                
+            <form method="post"  enctype="multipart/form-data" >             
                 <label for="mensagen">Mensagen</label>
                 <textarea type="text" name="mensagen" required > </textarea>
 
@@ -32,14 +32,13 @@
                 <label for="img">Documentos</label>
                 <input multiple type="file" name="imagems[]" required/>
 
-
-                <input type="submit" name="cadastra" value="enviar" />
+                <input type="submit" name="cadastra" value="enviar" />            
             </form>
+
         </section><!-- formulario -->
-    <?php } 
-     else{
-    ?>
+    <?php } else{ ?>
          <section class="formulario">
+
             <h1>Editar Boletim</h1>
 
             <?php 
@@ -52,8 +51,7 @@
             ?>
 
 
-            <form method="post"  enctype="multipart/form-data" >
-                
+            <form method="post"  enctype="multipart/form-data" >             
                 <label for="mensagen">Mensagen</label>
                 <textarea type="text" name="mensagen" value="<?php echo $boletim_dados[2] ?>" > <?php echo $boletim_dados[2] ?> </textarea>
 
@@ -70,6 +68,7 @@
                 
                 <input type="submit" name="editar" value="enviar" />
             </form>
+            
         </section><!-- formulario -->
 
      <?php } ?>
