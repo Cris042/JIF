@@ -7,6 +7,6 @@
 	ob_end_clean();
 
 	$mpdf = new \Mpdf\Mpdf();
-	$mpdf->WriteHTML(utf8_encode($conteudo));
+	$mpdf->WriteHTML($conteudo);
 	$mpdf->Output('boletim.pdf','D');
 ?>

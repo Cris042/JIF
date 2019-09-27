@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Set-2019 às 16:48
+-- Tempo de geração: 27-Set-2019 às 18:31
 -- Versão do servidor: 10.3.16-MariaDB
 -- versão do PHP: 7.3.7
 
@@ -31,7 +31,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `boletim_documentos` (
   `id` int(11) NOT NULL,
   `imagem` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `boletim_documentos`
+--
+
+INSERT INTO `boletim_documentos` (`id`, `imagem`) VALUES
+(3, '5d8e37f5ecae1.jpg'),
+(4, '5d8e37f5ed3b7.jpg'),
+(5, '5d8e37f5edcf2.jpg');
 
 -- --------------------------------------------------------
 
@@ -102,9 +111,17 @@ INSERT INTO `chamada` (`chamada_id`, `nome`, `status`, `data_inicio`, `hora_inic
 
 CREATE TABLE `comunicado` (
   `id` int(11) NOT NULL,
-  `mensagen` text CHARACTER SET utf8 NOT NULL,
-  `titulo` varchar(255) CHARACTER SET utf8 COLLATE utf8_german2_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `mensagen` text NOT NULL,
+  `titulo` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `comunicado`
+--
+
+INSERT INTO `comunicado` (`id`, `mensagen`, `titulo`) VALUES
+(9, ' orem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como o Aldus PageMaker, incluindo versões do Lorem Ipsum.orem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como o Aldus PageMaker, incluindo versões do Lorem Ipsum.', 'alimentaçao'),
+(10, ' orem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como o Aldus PageMaker, incluindo versões do Lorem Ipsum.orem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como o Aldus PageMaker, incluindo versões do Lorem Ipsum.', 'hospedagem');
 
 -- --------------------------------------------------------
 
@@ -114,10 +131,18 @@ CREATE TABLE `comunicado` (
 
 CREATE TABLE `coordenadores_modalidades` (
   `id` int(11) NOT NULL,
-  `cargo` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `nome` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `cargo` varchar(255) NOT NULL,
+  `nome` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `coordenadores_modalidades`
+--
+
+INSERT INTO `coordenadores_modalidades` (`id`, `cargo`, `nome`, `email`) VALUES
+(4, 'Coordenador Técnico Atletismo', 'jose', 'jose@gmail.com'),
+(5, 'Coordenador Técnico Basquete', 'jose', 'user1@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -147,11 +172,18 @@ INSERT INTO `etapa` (`etapa_id`, `enome`) VALUES
 
 CREATE TABLE `hospitais` (
   `id` int(11) NOT NULL,
-  `plano` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `plano` varchar(255) NOT NULL,
   `telefone` varchar(255) NOT NULL,
-  `endereco` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `instituicao` varchar(255) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `endereco` varchar(255) NOT NULL,
+  `instituicao` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `hospitais`
+--
+
+INSERT INTO `hospitais` (`id`, `plano`, `telefone`, `endereco`, `instituicao`) VALUES
+(1, 'sus', '(33) 23232-3123', 'North Hills, Califórnia', 'Hospital Grey\'s Anatomy');
 
 -- --------------------------------------------------------
 
@@ -263,7 +295,7 @@ INSERT INTO `jogo` (`jogo_id`, `local`, `horario`, `grupo`, `modalidade`, `etapa
 (10, 5, '15:00', 'ÚNICO', 31, 7, 15, 22, '19', '16', 1, '2019-05-15', 2, '', '', 1),
 (11, 9, '08:00', 'ÚNICO', 35, 7, 15, 8, '0', '3', 2, '2019-05-15', 1, '', '', 1),
 (12, 9, '09:30', 'ÚNICO', 35, 7, 101, 100, '1', '3', 2, '2019-05-15', 2, '', '', 1),
-(16, 6, '08:30', 'A', 19, 7, 22, 15, '1', '0', 1, '2019-05-15', 4, '', '', 1),
+(16, 6, '08:30', 'Ç', 19, 7, 22, 15, '1', '0', 1, '2019-05-15', 4, '', '', 1),
 (17, 6, '09:30', 'B', 19, 7, 9, 101, '2', '4', 2, '2019-05-15', 5, '', '', 1),
 (18, 6, '14:00', 'A', 22, 7, 12, 100, '4', '2', 1, '2019-05-15', 6, '', '', 1),
 (19, 6, '15:00', 'B', 22, 7, 9, 11, '6', '0', 1, '2019-05-15', 7, '', '', 1),
@@ -1512,9 +1544,16 @@ INSERT INTO `log` (`log_id`, `user_id`, `acao`, `tabela`, `registro`) VALUES
 CREATE TABLE `mensagen_reitoria` (
   `id` int(11) NOT NULL,
   `img` varchar(255) NOT NULL,
-  `mensagem` text CHARACTER SET utf8 NOT NULL,
-  `autor` varchar(255) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `mensagem` text NOT NULL,
+  `autor` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `mensagen_reitoria`
+--
+
+INSERT INTO `mensagen_reitoria` (`id`, `img`, `mensagem`, `autor`) VALUES
+(2, '5d8e37f5d7876.jpg', 'orem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como o Aldus PageMaker, incluindo versões do Lorem Ipsum.orem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de amostras do tipo. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas de Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como o Aldus PageMaker, incluindo versões do Lorem Ipsum.', 'jose');
 
 -- --------------------------------------------------------
 
@@ -1558,11 +1597,18 @@ INSERT INTO `modalidade` (`modalidade_id`, `mnome`, `msexo`) VALUES
 
 CREATE TABLE `organizacao` (
   `id` int(11) NOT NULL,
-  `cargo` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `cargo` varchar(255) NOT NULL,
   `telefone` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `nome` varchar(255) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nome` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `organizacao`
+--
+
+INSERT INTO `organizacao` (`id`, `cargo`, `telefone`, `email`, `nome`) VALUES
+(4, 'técnico', '94848', 'rf', 'ÇÇ');
 
 -- --------------------------------------------------------
 
@@ -1676,7 +1722,7 @@ CREATE TABLE `telefones` (
   `id` int(11) NOT NULL,
   `numero` varchar(255) NOT NULL,
   `instituicao` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1689,7 +1735,7 @@ CREATE TABLE `transporte` (
   `numero_linha` varchar(255) NOT NULL,
   `telefone` varchar(255) NOT NULL,
   `regiao` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1701,9 +1747,9 @@ CREATE TABLE `turismo` (
   `id` int(11) NOT NULL,
   `data` varchar(255) NOT NULL,
   `hora` varchar(255) NOT NULL,
-  `local` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `nome` varchar(255) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `local` varchar(255) NOT NULL,
+  `nome` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1901,7 +1947,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de tabela `boletim_documentos`
 --
 ALTER TABLE `boletim_documentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `campus`
@@ -1919,13 +1965,13 @@ ALTER TABLE `chamada`
 -- AUTO_INCREMENT de tabela `comunicado`
 --
 ALTER TABLE `comunicado`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `coordenadores_modalidades`
 --
 ALTER TABLE `coordenadores_modalidades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `etapa`
@@ -1937,7 +1983,7 @@ ALTER TABLE `etapa`
 -- AUTO_INCREMENT de tabela `hospitais`
 --
 ALTER TABLE `hospitais`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `jogador`
@@ -1985,7 +2031,7 @@ ALTER TABLE `log`
 -- AUTO_INCREMENT de tabela `mensagen_reitoria`
 --
 ALTER TABLE `mensagen_reitoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `modalidade`
@@ -1997,7 +2043,7 @@ ALTER TABLE `modalidade`
 -- AUTO_INCREMENT de tabela `organizacao`
 --
 ALTER TABLE `organizacao`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `resultado`
