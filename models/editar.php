@@ -34,13 +34,19 @@
             $nome = strip_tags($_POST['nome'.$id]);
             $email = strip_tags($_POST['email'.$id]);
             $emailatual = strip_tags($_POST['emailatual'.$id]);
-
-            if($email != $emailatual)
-                $verifica = \models\bd::verifica('coordenadores_modalidades','email = ?',array($email));
+            $cargoatual = strip_tags($_POST['cargoatual'.$id]);
+           
+            if($email != $emailatual )
+                $verifica_eml = \models\bd::verifica('coordenadores_modalidades','email = ?',array($email));
             else
-                $verifica = true;
-
-            if($verifica == true)
+                $verifica_eml = true;
+           
+            if($cargo != $cargoatual )
+                $verifica_carg = \models\bd::verifica('coordenadores_modalidades','cargo = ?',array($cargo));
+            else
+                $verifica_carg = true;
+        
+            if($verifica_carg == true && $verifica_eml == true)
             {
                 \models\bd::editar('coordenadores_modalidades','cargo = ?,nome= ?,email = ?',
                  array($cargo,$nome,$email),$id);
@@ -88,18 +94,24 @@
             $telefone = strip_tags($_POST['telefone'.$id]);
             $emailatual = strip_tags($_POST['emailatual'.$id]);
             $email = strip_tags($_POST['email'.$id]);
-
+            $cargoatual = strip_tags($_POST['cargoatual'.$id]);
+            
             if($telefone != $telefoneatual)
-                $verifica = \models\bd::verifica('organizacao','telefone = ?',array($telefone));
+                $verifica_tel = \models\bd::verifica('organizacao','telefone = ?',array($telefone));
+            else
+                $verifica_tel = true;
             
             if($email != $emailatual)
-                $verifica = \models\bd::verifica('organizacao','email = ?',array($email));
+                $verifica_eml = \models\bd::verifica('organizacao','email = ?',array($email));
+            else
+                $verifica_eml = true;
 
-            else if($email == $emailatual && $telefone == $telefoneatual)
-                $verifica = true;
+            if($cargo != $cargoatual )
+                $verifica_carg = \models\bd::verifica('organizacao','cargo = ?',array($cargo));
+            else
+                $verifica_carg = true;
 
-
-            if($verifica == true)
+            if($verifica_tel == true && $verifica_eml == true && $verifica_carg == true)
             {
                 \models\bd::editar('organizacao','cargo = ?,telefone = ?,email = ?',
                  array($cargo,$telefone,$email),$id);

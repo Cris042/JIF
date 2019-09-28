@@ -83,6 +83,7 @@
                             </li>
                             
                             <input type="hidden" name ="emailatual<?php echo $value['id'] ?>" value="<?php echo $value['email'] ?>" />
+                            <input type="hidden" name ="cargoatual<?php echo $value['id'] ?>" value="<?php echo $value['cargo'] ?>" />
                             <input type="hidden" name ="id" value="<?php echo $value['id'] ?>" />
 
                             <button type="submit" name="editar" class="btn btn-link">Editar</button>

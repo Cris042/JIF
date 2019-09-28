@@ -58,7 +58,7 @@
                 <label for="autor">Autor</label>
                 <input type="text" name ="autor"  value="<?php echo $boletim_dados[3] ?>"/>
 
-                <label for="img">Imagem</label>
+                <label for="img">Logo</label>
                 <input type="file" name = "imagem" />
 
                 <label for="img">Documentos</label>

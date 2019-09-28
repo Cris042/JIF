@@ -27,8 +27,9 @@
              $nome = strip_tags($_POST['nome']);
              $email = strip_tags($_POST['email']);
              $verifica_email = \models\bd::verifica('coordenadores_modalidades','email = ?',array($email));
+             $verifica_cargo = \models\bd::verifica('coordenadores_modalidades','cargo = ?',array($cargo));
             
-             if($verifica_email == true)
+             if($verifica_email == true && $verifica_cargo == true)
              {
                \models\bd::inserir('coordenadores_modalidades','?,?,?',array($cargo,$nome,$email));
                \models\bd::msn('Cadastro efeituado com sucesso','1');
@@ -47,8 +48,9 @@
              $email = strip_tags($_POST['email']);
              $telefone = strip_tags($_POST['telefone']);
              $verifica_email = \models\bd::verifica('organizacao','email = ?',array($email));
+             $verifica_cargo = \models\bd::verifica('organizacao','cargo = ?',array($cargo));
             
-             if($verifica_email == true)
+             if($verifica_email == true && $verifica_cargo == true)
              {
                \models\bd::inserir('organizacao','?,?,?,?',array($cargo,$telefone,$email,$nome));
                \models\bd::msn('Cadastro efeituado com sucesso','1');
